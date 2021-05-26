@@ -37,7 +37,7 @@
 		align-items: center;
 		gap: 20px;
 
-		min-height: 100vh;
+		/* min-height: 100vh; */
 
 		margin: auto;
 		padding: var(--padding);
