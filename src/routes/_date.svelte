@@ -5,16 +5,15 @@
 	<div class="block">
 		<img src="/image/date.gif" alt="date" />
 		<h1>December 17th, 2020</h1>
-		<h1>
-
-			RCCG - Christ The Lord , 1-5 Admiralty Road, Lekki Phase 1
-		</h1>
+		<h1>RCCG - Christ The Lord , 1-5 Admiralty Road, Lekki Phase 1</h1>
 	</div>
 </div>
 
 <style>
 	.section {
 		background-image: url('/image/date.jpg');
+		background-color: rgba(0, 0, 0, 0.4);
+		background-blend-mode: multiply;
 
 		background-position: center;
 		background-size: cover;
@@ -29,7 +28,6 @@
 
 		min-height: 100vh;
 
-		background-color: rgba(0, 0, 0, 0.3);
 
 		margin: auto;
 		padding: var(--padding);
@@ -38,10 +36,11 @@
 		width: 100%;
 		max-width: 200px;
 	}
-	h1,
-	p {
+	h1 {
 		text-align: center;
 		max-width: 500px;
+
+		color: var(--fColor1);
 	}
 
 	@media screen and (min-width: 800px) {

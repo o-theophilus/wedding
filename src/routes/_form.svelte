@@ -3,7 +3,9 @@
 </script>
 
 <div class="section">
-	<div class="block" />
+	<div class="block" >
+		Form
+</div>
 </div>
 
 <style>

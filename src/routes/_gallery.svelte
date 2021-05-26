@@ -1,14 +1,12 @@
 <script>
-	
 </script>
 
 <div class="section">
-	<div class="block" />
+	<div class="block">Gallery</div>
 </div>
 
 <style>
 	.section {
-	
 	}
 	.block {
 		min-height: 100vh;

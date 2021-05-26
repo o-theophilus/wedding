@@ -4,8 +4,8 @@
 <div class="section">
 	<div class="block">
 		<div class="img">
-			<img class="pic" src="/image/title.jpg" alt="" />
-			<img class="flower" src="image/flower1.png" alt="" />
+			<img class="pic" src="/image/title.jpg" alt="title" />
+			<img class="flower" src="image/flower1.png" alt="flower1" />
 		</div>
 
 		<h1>Man & Wife</h1>
