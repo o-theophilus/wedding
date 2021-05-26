@@ -23,9 +23,11 @@
 }
 
 :root {
+	--color0: rgba(0, 0, 0, 0);
 	--color1: white;
 	--color2: rgb(82, 66, 142);
 	--color3: black;
+	--color4: rgb(243, 243, 243);
 	--fColor1: white;
 	--fColor2: rgb(82, 66, 142);
 

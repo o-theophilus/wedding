@@ -76,118 +76,125 @@ I'll like so learn _____ from you.
 </script>
 
 <div id="seven">
-	<Section let:bgi>
-		<h1 class:v1={bgi != null}>RSVP</h1>
-		<div class="form_block">
-			{#if sending}
-				<div class="blocker">
-					<h2>Sending . . .</h2>
-				</div>
-			{/if}
-			{#if !sent}
-				<form on:submit|preventDefault={validate}>
-					<div class="inputGroup">
-						<label for="name">Your Name</label>
-						<input placeholder="Your Name" type="text" id="name" bind:value={form.name} />
-						<!-- <svg width="30px" height="30px">
+<Section>
+	<div class="form_block">
+		{#if sending}
+			<div class="blocker">
+				<video class="busy" loop autoplay muted>
+					<source src="/site/busy.mp4" type="video/mp4" />
+				</video>
+				<br />
+				<br />
+				<h2>Sending . . .</h2>
+			</div>
+		{/if}
+		{#if !sent}
+			<p>
+				Feel free to contact me with questions or anything else. I will do my best to respond to
+				your query as soon as possible.
+			</p>
+
+			<form on:submit|preventDefault={validate}>
+				<div class="inputGroup">
+					<label for="name">Your Name</label>
+					<input placeholder="Your Name" type="text" id="name" bind:value={form.name} />
+					<!-- <svg width="30px" height="30px">
 						<SVG type="username" />
 					</svg> -->
-						{#if err.name}
-							<p class="err">
-								{err.name}
-							</p>
-						{/if}
-					</div>
-					<div class="inputGroup">
-						<label for="email">Your E-mail</label>
-						<input placeholder="Your E-mail" type="text" id="email" bind:value={form.email} />
-						<!-- <svg width="30px" height="30px">
-						<SVG type="emailAddress" />
-					</svg> -->
-						{#if err.email}
-							<p class="err">
-								{err.email}
-							</p>
-						{/if}
-					</div>
-
-					<div class="inputGroup">
-						<label for="phone">Your Phone Number</label>
-						<input placeholder="Your Phone Number" type="text" id="phone" bind:value={form.phone} />
-						<!-- <svg width="30px" height="30px">
-						<SVG type="phone" />
-					</svg> -->
-						{#if err.email}
-							<p class="err">
-								{err.email}
-							</p>
-						{/if}
-					</div>
-
-					<div class="inputGroup">
-						<p>Will you attend?</p>
-						{#each attend as a, i}
-							<br />
-							<input type="radio" id="attend{i}" value={a} />
-							<label for="attend{i}">{a}</label>
-						{/each}
-					</div>
-
-					<div class="inputGroup">
-						<p>Your Meal Preference</p>
-						{#each meal as a, i}
-							<br />
-							<input type="radio" id="meal{i}" value={a} />
-							<label for="meal{i}">{a}</label>
-						{/each}
-					</div>
-
-					<div class="inputGroup">
-						<select name="template" id="" bind:value={form.msg}>
-							<option value={store}>Message (Optional)</option>
-							{#each template as temp}
-								<option value={temp.text}>{temp.name}</option>
-							{/each}
-						</select>
-
-						<textarea
-							placeholder="Your Message"
-							id="message"
-							bind:value={form.msg}
-							on:input={() => (store = form.msg)}
-						/>
-						{#if err.msg}
-							<p class="err">
-								{err.msg}
-							</p>
-						{/if}
-					</div>
-					{#if err.form}
+					{#if err.name}
 						<p class="err">
-							{err.form}
+							{err.name}
 						</p>
 					{/if}
+				</div>
+				<div class="inputGroup">
+					<label for="email">Your E-mail</label>
+					<input placeholder="Your E-mail" type="text" id="email" bind:value={form.email} />
+					<!-- <svg width="30px" height="30px">
+						<SVG type="emailAddress" />
+					</svg> -->
+					{#if err.email}
+						<p class="err">
+							{err.email}
+						</p>
+					{/if}
+				</div>
 
-					<div class="inputGroup submit">
-						<input type="submit" value="Submit" />
-					</div>
-				</form>
-			{:else}
-				<p>Thank You</p>
-				<br />
-				<br />
+				<div class="inputGroup">
+					<label for="phone">Your Phone Number</label>
+					<input placeholder="Your Phone Number" type="text" id="phone" bind:value={form.phone} />
+					<!-- <svg width="30px" height="30px">
+						<SVG type="phone" />
+					</svg> -->
+					{#if err.email}
+						<p class="err">
+							{err.email}
+						</p>
+					{/if}
+				</div>
 
-				Back to <a href="/">Home</a>
-			{/if}
-		</div>
-	</Section>
+				<div class="inputGroup">
+					<p>Will you attend?</p>
+					{#each attend as a}
+						<input type="radio" name="attend" value={a} />
+						<label for="attend">{a}</label>
+					{/each}
+				</div>
+
+				<div class="inputGroup">
+					<p>Your Meal Preference</p>
+					{#each meal as a}
+						<input type="radio" name="attend" value={a} />
+						<label for="attend">{a}</label>
+					{/each}
+				</div>
+
+				<div class="inputGroup">
+					<select name="template" id="" bind:value={form.msg}>
+						<option value={store}>Message (Optional)</option>
+						{#each template as temp}
+							<option value={temp.text}>{temp.name}</option>
+						{/each}
+					</select>
+
+					<textarea
+						placeholder="Your Message"
+						id="message"
+						bind:value={form.msg}
+						on:input={() => (store = form.msg)}
+					/>
+					{#if err.msg}
+						<p class="err">
+							{err.msg}
+						</p>
+					{/if}
+				</div>
+				{#if err.form}
+					<p class="err">
+						{err.form}
+					</p>
+				{/if}
+
+				<div class="inputGroup submit">
+					<input type="submit" value="Submit" />
+				</div>
+			</form>
+		{:else}
+			<p>Thank You</p>
+			<br />
+			<br />
+			<video loop autoplay muted>
+				<source src="/site/done.mp4" type="video/mp4" />
+			</video>
+			<br />
+			<br />
+			Back to <a href="/">Home</a>
+		{/if}
+	</div>
+</Section>
 </div>
 
 <style>
-	* {
-		text-align: left;
-	}
-
 	.inputGroup {
 		--inputHeight: 50px;
 
@@ -198,47 +205,47 @@ I'll like so learn _____ from you.
 		display: inline-block;
 		margin-bottom: 10px;
 	}
-	[type='text'],
-	[type='submit'],
+	input,
 	textarea {
 		width: 100%;
 		height: var(--inputHeight);
 
+		border-radius: var(--bRadius);
 		border-radius: 25px;
-		border: 2px solid var(--color0);
+		border: 2px solid var(--colorNill);
 
 		padding: 10px;
 
 		font-size: 1.2rem;
 
-		background-color: var(--color4);
+		resize: none;
+
+		background-color: var(--color6);
 
 		transition: all var(--animTime1);
 		transition-timing-function: ease-in-out;
 	}
 	textarea {
-		resize: none;
 		height: 150px;
 	}
 	input:focus,
 	textarea:focus {
 		outline: none;
 		background-color: var(--color1);
-		border-color: var(--color2);
+		border-color: var(--color3);
 	}
 
 	[type='submit'] {
-		background-color: var(--color3);
+		background-color: var(--color2);
 		color: var(--color1);
-		text-align: center;
 	}
 	[type='submit']:hover,
 	[type='submit']:focus {
 		outline: none;
-		background-color: var(--color2);
-		/* border-color: var(--colorNill); */
+		background-color: var(--color3);
+		border-color: var(--colorNill);
 	}
-	/* 
+
 	[type='text'] {
 		padding-left: var(--inputHeight);
 	}
@@ -258,7 +265,7 @@ I'll like so learn _____ from you.
 
 		transition: all var(--animTime1);
 		transition-timing-function: ease-in-out;
-	} */
+	}
 	select {
 		background-color: var(--color1);
 		font-size: 16px;
@@ -267,7 +274,6 @@ I'll like so learn _____ from you.
 	}
 	select:focus,
 	select:active {
-		outline: none;
 		border: none;
 	}
 
