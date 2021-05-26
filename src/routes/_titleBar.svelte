@@ -1,8 +1,14 @@
+<script>
+	import Hamburger from './_mmb.svelte';
+</script>
+
 <div class="section">
 	<div class="block">
 		<img src="/image/title.jpg" class="icon" alt="" />
 		<h1>Man & Wife</h1>
-		<div class="menu">iii</div>
+		<div class="menu">
+			<Hamburger />
+		</div>
 	</div>
 </div>
 

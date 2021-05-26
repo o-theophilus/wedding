@@ -14,7 +14,7 @@
 
 <style>
 	.section {
-		background-image: url('/image/title.jpg');
+		background-image: url('/image/title_1024.jpg');
 
 		background-position: center;
 		background-size: cover;
@@ -91,6 +91,7 @@
 	}
 	@media screen and (min-width: 1200px) {
 		.section {
+			background-image: url('/image/title.jpg');
 			--imgMaxWidth: 500px;
 		}
 
