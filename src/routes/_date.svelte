@@ -1,23 +1,49 @@
 <script>
-	
 </script>
 
 <div class="section">
-	<div class="block" />
+	<div class="block">
+		<img src="/image/date.gif" alt="date" />
+		<h1>December 17th, 2020</h1>
+		<h1>
+
+			RCCG - Christ The Lord , 1-5 Admiralty Road, Lekki Phase 1
+		</h1>
+	</div>
 </div>
 
 <style>
 	.section {
-		background-image: url('/images/date.jpg');
+		background-image: url('/image/date.jpg');
 
 		background-position: center;
 		background-size: cover;
 		background-attachment: fixed;
 	}
 	.block {
-		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+
+		min-height: 100vh;
+
+		background-color: rgba(0, 0, 0, 0.3);
+
 		margin: auto;
+		padding: var(--padding);
 	}
+	img {
+		width: 100%;
+		max-width: 200px;
+	}
+	h1,
+	p {
+		text-align: center;
+		max-width: 500px;
+	}
+
 	@media screen and (min-width: 800px) {
 		.block {
 			max-width: 800px;

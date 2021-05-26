@@ -1,17 +1,32 @@
 <script>
-	
 </script>
 
 <div class="section">
-	<div class="block" />
+	<div class="block">
+		<h1>
+			Send Gifts
+			<br />
+			Bank Name: GT Bank
+			<br />
+
+			Account Number: 0051874152
+			<br />
+
+			Account Name: Davies Ebhomenye
+		</h1>
+	</div>
 </div>
 
 <style>
 	.section {
-	
+		background-image: url('/image/gift.jpg');
+
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
 	}
 	.block {
-		height: 100vh;
+		min-height: 100vh;
 		margin: auto;
 	}
 	@media screen and (min-width: 800px) {

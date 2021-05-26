@@ -1,19 +1,44 @@
-<script>
-	
-</script>
-
 <div class="section">
-	<div class="block" />
+	<div class="block">
+		<img src="/image/flower3.gif" alt="flower" />
+		<h1>Our Story</h1>
+		<h1>The 29th of October 2019</h1>
+		<p>
+			It was 29th October 2019, and I was working on a project at work. My boss brought in a
+			creative consultant for the project and we were added to a WhatsApp group chat. He sent me a
+			direct message after seeing my picture on the group chat. “You are cute, Hope”, the very first
+			words he said to me. I smiled and replied, “thank you”. Days after, he checked on me and we
+			got talking. As we conversed and got to know each other, I found out that we share a couple of
+			common interests one of these interests being his love for God and wanting to live for Christ.
+			It was at this point, that he got my full attention. Three dates after, and he took me to his
+			parents.
+		</p>
+	</div>
 </div>
 
 <style>
-	.section {
-	
-	}
 	.block {
-		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+
+		min-height: 100vh;
+
 		margin: auto;
+		padding: var(--padding);
 	}
+	img {
+		width: 100%;
+		max-width: 500px;
+	}
+	h1,
+	p {
+		text-align: center;
+		max-width: 500px;
+	}
+
 	@media screen and (min-width: 800px) {
 		.block {
 			max-width: 800px;

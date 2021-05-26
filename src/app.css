@@ -11,4 +11,11 @@
 	--desktop: 1500px;
 
 	--titleHeight: 80px;
+
+	--padding: 40px;
+}
+
+@font-face {
+	font-family: font1;
+	src: url('/font/marsha.ttf');
 }

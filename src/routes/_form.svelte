@@ -11,7 +11,7 @@
 	
 	}
 	.block {
-		height: 100vh;
+		min-height: 100vh;
 		margin: auto;
 	}
 	@media screen and (min-width: 800px) {
