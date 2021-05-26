@@ -1,0 +1,14 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--color1: white;
+	
+	--mobile: 800px;
+	--tab: 1200px;
+	--desktop: 1500px;
+
+	--titleHeight: 80px;
+}
