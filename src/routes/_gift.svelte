@@ -5,7 +5,7 @@
 	<div class="block">
 		<h1>Send Gifts</h1>
 
-		<p>
+		<h2>
 			Bank Name: GT Bank
 			<br />
 
@@ -13,7 +13,7 @@
 			<br />
 
 			Account Name: Davies Ebhomenye
-		</p>
+		</h2>
 		<br />
 		<img src="/image/thanks.gif" alt="thanks" />
 	</div>
@@ -22,12 +22,14 @@
 <style>
 	.section {
 		background-image: url('/image/gift.jpg');
-		background-color: rgba(0, 0, 0, 0.4);
+		background-color: var(--blendColor);
 		background-blend-mode: multiply;
 
 		background-position: center;
 		background-size: cover;
 		background-attachment: fixed;
+
+		color: var(--fColor1);
 	}
 	.block {
 		display: flex;
@@ -46,11 +48,8 @@
 		max-width: 300px;
 	}
 	h1,
-	p {
-		text-align: center;
+	h2 {
 		max-width: 500px;
-
-		color: var(--fColor1);
 	}
 	@media screen and (min-width: 800px) {
 		.block {

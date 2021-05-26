@@ -1,7 +1,7 @@
 <div class="section">
 	<div class="block">
 		<img src="/image/flower4.gif" alt="flower" />
-		<h1>The Day They Got Engaged</h1>
+		<h1>The day they got engaged</h1>
 		<p>
 			He proposed on the 23rd of May 2020. It was an intimate proposal at his house immediately
 			after the lockdown ease. Cake, hanging balloons, petals and floating candles. He gave a
@@ -15,7 +15,7 @@
 <style>
 	.section {
 		background-image: url('/image/gift.jpg');
-		background-color: rgba(0, 0, 0, 0.4);
+		background-color: var(--blendColor);
 		background-blend-mode: multiply;
 
 		background-position: center;

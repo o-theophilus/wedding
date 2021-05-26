@@ -5,7 +5,7 @@
 <div class="section">
 	<div class="block">
 		<img src="/image/title.jpg" class="icon" alt="" />
-		<h1>Man & Wife</h1>
+		<h2>Man & Wife</h2>
 		<div class="menu">
 			<Hamburger />
 		</div>
@@ -20,6 +20,7 @@
 		z-index: 1;
 
 		backdrop-filter: blur(3px);
+		color: var(--color1);
 	}
 	.block {
 		display: flex;
@@ -28,19 +29,14 @@
 		gap: 20px;
 		height: var(--titleHeight);
 
-		/* max-width: 600px; */
-
 		margin: auto;
 		padding: 10px;
 	}
 
 	img {
 		height: 100%;
-		/* border-radius: 50%; */
 	}
-	h1 {
-		color: var(--color1);
-	}
+
 	.menu {
 		margin-left: auto;
 	}

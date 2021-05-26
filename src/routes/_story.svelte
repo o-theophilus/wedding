@@ -2,7 +2,7 @@
 	<div class="block">
 		<img src="/image/flower3.gif" alt="flower" />
 		<h1>Our Story</h1>
-		<h1>The 29th of October 2019</h1>
+		<h2>The 29th of October 2019</h2>
 		<p>
 			It was 29th October 2019, and I was working on a project at work. My boss brought in a
 			creative consultant for the project and we were added to a WhatsApp group chat. He sent me a
@@ -28,14 +28,17 @@
 
 		margin: auto;
 		padding: var(--padding);
+
+		text-align: center;
 	}
 	img {
 		width: 100%;
-		max-width: 500px;
 	}
+
 	h1,
+	img,
+	h2,
 	p {
-		text-align: center;
 		max-width: 500px;
 	}
 

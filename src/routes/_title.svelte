@@ -35,10 +35,7 @@
 
 		padding: var(--titleHeight) 0;
 	}
-	h1 {
-		text-align: center;
-		font-family: font1;
-	}
+	
 	.img {
 		position: relative;
 
