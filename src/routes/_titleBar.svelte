@@ -1,14 +1,14 @@
 <script>
 	import Hamburger from './_mmb.svelte';
+	import Nav from './_nav.svelte';
 </script>
 
 <div class="section">
 	<div class="block">
 		<img src="/image/title.jpg" class="icon" alt="" />
 		<h2>Man & Wife</h2>
-		<div class="menu">
-			<Hamburger />
-		</div>
+		<Nav />
+		<Hamburger />
 	</div>
 </div>
 
@@ -19,7 +19,7 @@
 		width: 100%;
 		z-index: 1;
 
-		backdrop-filter: blur(3px);
+		/* backdrop-filter: blur(3px); */
 		color: var(--color1);
 		text-shadow: 0 0 3px black, 0 0 3px black;
 	}
@@ -36,10 +36,6 @@
 
 	img {
 		height: 100%;
-	}
-
-	.menu {
-		margin-left: auto;
 	}
 
 	@media screen and (min-width: 800px) {

@@ -40,7 +40,7 @@
 		/* min-height: 100vh; */
 
 		margin: auto;
-		padding: var(--padding);
+		padding: calc(var(--padding) * 4) var(--padding);
 	}
 
 	@media screen and (min-width: 800px) {

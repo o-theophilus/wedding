@@ -9,6 +9,7 @@
 	import Form from './_7.svelte';
 	import Gift from './_8.svelte';
 	import Footer from './_footer.svelte';
+	import Blocker from './_blocker.svelte';
 </script>
 
 <svelte:head>
@@ -25,3 +26,4 @@
 <Form />
 <Gift />
 <Footer />
+<!-- <Blocker /> -->

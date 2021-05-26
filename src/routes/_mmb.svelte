@@ -43,6 +43,8 @@
 		transition-timing-function: ease-in-out;
 
 		pointer-events: auto;
+
+		margin-left: auto;
 	}
 
 	.humburger div {
@@ -84,5 +86,13 @@
 	}
 	.openMobileMenu .two {
 		transform: rotate(-45deg);
+	}
+
+
+
+	@media screen and (min-width: 800px) {
+		.humburger{
+			display: none;
+		}
 	}
 </style>
