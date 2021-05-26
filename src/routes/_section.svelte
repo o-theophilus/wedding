@@ -1,25 +1,34 @@
 <script>
+	export let bgi = null;
+	export let blend = true;
 </script>
 
-<div class="section">
+<div
+	class="section"
+	class:bgi={bgi != null}
+	class:blend={bgi != null && blend}
+	style="background-image: url('/image/{bgi}.jpg')"
+>
 	<div class="block">
-		<img src="/image/date.gif" alt="date" />
-		<h1>December 17th, 2020</h1>
-		<h2>RCCG - Christ The Lord , 1-5 Admiralty Road, Lekki Phase 1</h2>
+		<slot {bgi} />
 	</div>
+	<!-- <slot name="bottom" /> -->
 </div>
 
 <style>
 	.section {
-		background-image: url('/image/date.jpg');
-		background-color: var(--blendColor);
-		background-blend-mode: multiply;
+		position: relative;
 
+		background-blend-mode: multiply;
 		background-position: center;
 		background-size: cover;
 		background-attachment: fixed;
-		
+	}
+	.bgi {
 		color: var(--fColor1);
+	}
+	.blend {
+		background-color: var(--blendColor);
 	}
 	.block {
 		display: flex;
@@ -30,17 +39,8 @@
 
 		min-height: 100vh;
 
-
 		margin: auto;
 		padding: var(--padding);
-	}
-	img {
-		width: 100%;
-		max-width: 200px;
-	}
-	h1, h2 {
-		max-width: 500px;
-
 	}
 
 	@media screen and (min-width: 800px) {

@@ -1,14 +1,19 @@
 <script>
-    import TitleBar from './_titleBar.svelte';
-    import Title from './_title.svelte';
-    import Story from './_story.svelte';
-    import Date from './_date.svelte';
-    import Details from './_details.svelte';
-    import Story2 from './_story2.svelte';
-    import Gallery from './_gallery.svelte';
-    import Form from './_form.svelte';
-    import Gift from './_gift.svelte';
+	import TitleBar from './_titleBar.svelte';
+	import Title from './_1.svelte';
+	import Story from './_2.svelte';
+	import Date from './_3.svelte';
+	import Details from './_4.svelte';
+	import Story2 from './_5.svelte';
+	import Gallery from './_6.svelte';
+	import Form from './_7.svelte';
+	import Gift from './_8.svelte';
+	import Footer from './_footer.svelte';
 </script>
+
+<svelte:head>
+	<title>Man and Wife</title>
+</svelte:head>
 
 <TitleBar />
 <Title />
@@ -19,3 +24,4 @@
 <Gallery />
 <Form />
 <Gift />
+<Footer />

@@ -21,6 +21,7 @@
 
 		backdrop-filter: blur(3px);
 		color: var(--color1);
+		text-shadow: 0 0 3px black, 0 0 3px black;
 	}
 	.block {
 		display: flex;

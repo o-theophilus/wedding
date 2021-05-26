@@ -1,7 +1,11 @@
-<div class="section">
-	<div class="block">
+<script>
+	import Section from './_section.svelte';
+</script>
+
+<div id="two">
+	<Section let:bgi>
 		<img src="/image/flower3.gif" alt="flower" />
-		<h1>Our Story</h1>
+		<h1 class:v1={bgi != null}>Our Story</h1>
 		<h2>The 29th of October 2019</h2>
 		<p>
 			It was 29th October 2019, and I was working on a project at work. My boss brought in a
@@ -13,48 +17,12 @@
 			It was at this point, that he got my full attention. Three dates after, and he took me to his
 			parents.
 		</p>
-	</div>
+	</Section>
 </div>
 
 <style>
-	.block {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 20px;
-
-		min-height: 100vh;
-
-		margin: auto;
-		padding: var(--padding);
-
-		text-align: center;
-	}
 	img {
 		width: 100%;
-	}
-
-	h1,
-	img,
-	h2,
-	p {
 		max-width: 500px;
-	}
-
-	@media screen and (min-width: 800px) {
-		.block {
-			max-width: 800px;
-		}
-	}
-	@media screen and (min-width: 1200px) {
-		.block {
-			max-width: 1000px;
-		}
-	}
-	@media screen and (min-width: 1500px) {
-		.block {
-			max-width: 1200px;
-		}
 	}
 </style>
