@@ -11,10 +11,12 @@
 	import Gift from './_8.svelte';
 	import Footer from './_footer.svelte';
 	import Blocker from './_blocker.svelte';
+
+	import { title } from '$lib/store.js';
 </script>
 
 <svelte:head>
-	<title>Man and Wife</title>
+	<title>{$title}</title>
 </svelte:head>
 
 <Title />
