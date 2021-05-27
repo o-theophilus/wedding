@@ -1,5 +1,6 @@
 <script>
 	import TitleBar from './_titleBar.svelte';
+	import TitleBar2 from './_titleBar2.svelte';
 	import Title from './_1.svelte';
 	import Story from './_2.svelte';
 	import Date from './_3.svelte';
@@ -16,7 +17,6 @@
 	<title>Man and Wife</title>
 </svelte:head>
 
-<TitleBar />
 <Title />
 <Story />
 <Date />
@@ -26,4 +26,7 @@
 <Form />
 <Gift />
 <Footer />
-<!-- <Blocker /> -->
+
+<TitleBar />
+<Blocker />
+<TitleBar2 />

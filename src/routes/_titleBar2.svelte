@@ -1,25 +1,16 @@
 <script>
-	import Nav from './_nav.svelte';
+	import Hamburger from './_mmb.svelte';
 
-	import { isMobile, title } from '$lib/store.js';
-
-	const scrollTo = (id) => {
-		let e = document.querySelector(`#${id}`);
-		e.scrollIntoView({
-			behavior: 'smooth'
-		});
-	};
+	import { isMobile } from '$lib/store.js';
 </script>
 
-<div class="section">
-	<div class="block">
-		<img src="/image/title.jpg" class="icon" alt="logo" on:click={() => scrollTo('one')} />
-		<h2 on:click={() => scrollTo('one')}>{$title}</h2>
-		{#if !$isMobile}
-			<Nav />
-		{/if}
+{#if $isMobile}
+	<div class="section">
+		<div class="block">
+			<Hamburger />
+		</div>
 	</div>
-</div>
+{/if}
 
 <style>
 	.section {
@@ -27,7 +18,7 @@
 		top: 0;
 		width: 100%;
 
-		/* backdrop-filter: blur(3px); */
+		pointer-events: none;
 		color: var(--color1);
 		text-shadow: 0 0 3px black, 0 0 3px black;
 	}
@@ -40,15 +31,6 @@
 
 		margin: auto;
 		padding: 10px;
-	}
-
-	img {
-		height: 100%;
-	}
-
-	h2,
-	img {
-		cursor: pointer;
 	}
 
 	@media screen and (min-width: 800px) {

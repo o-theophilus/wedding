@@ -7,7 +7,7 @@
 	class="section"
 	class:bgi={bgi != null}
 	class:blend={bgi != null && blend}
-	style="background-image: url('/image/{bgi}.jpg')"
+	style={bgi != null ? `background-image: url('/image/${bgi}.jpg')` : ''}
 >
 	<div class="block">
 		<slot {bgi} />

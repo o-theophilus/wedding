@@ -1,6 +1,8 @@
 <script>
 	import Section from './_section.svelte';
 	import Scroller from './_scroller.svelte';
+
+	import { title } from '$lib/store.js';
 </script>
 
 <div id="one">
@@ -11,7 +13,7 @@
 			<img class="bird" src="image/bird.png" alt="bird" />
 		</div>
 
-		<h1 class:v1={bgi != null}>Man & Wife</h1>
+		<h1 class:v1={bgi != null}>{$title}</h1>
 		<Scroller id="two" />
 	</Section>
 </div>
@@ -21,9 +23,8 @@
 		--imagePad: 60px;
 		--imgMaxWidth: 400px;
 	}
-	
-	.subject {
 
+	.subject {
 		position: relative;
 
 		width: calc(100vw - var(--imagePad));

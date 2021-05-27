@@ -8,11 +8,11 @@
 		<h1 class:v1={bgi != null}>Send Gifts</h1>
 		<br />
 		<p>Bank Name:</p>
-		<h2>GT Bank</h2>
+		<h2>Bank</h2>
 		<p>Account Number:</p>
-		<h2>0051874152</h2>
+		<h2>1234567890</h2>
 		<p>Account Name:</p>
-		<h2>Davies Ebhomenye</h2>
+		<h2>Man Wife</h2>
 		<br />
 		<img src="/image/thanks.gif" alt="thanks" />
 		<Scroller id="one" text="To Top" />

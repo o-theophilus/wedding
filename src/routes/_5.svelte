@@ -5,7 +5,7 @@
 <div id="five">
 	<Section bgi="engage" let:bgi>
 		<img src="/image/flower5.gif" alt="flower" />
-		<h1 class:v1={bgi != null}>The day they got engaged</h1>
+		<h1 class:v1={bgi != null}>The day we got engaged</h1>
 		<p>
 			He proposed on the 23rd of May 2020. It was an intimate proposal at his house immediately
 			after the lockdown ease. Cake, hanging balloons, petals and floating candles. He gave a

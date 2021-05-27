@@ -29,8 +29,6 @@
 		align-items: center;
 
 		position: relative;
-		/* top: 10px;
-		right: var(--pad); */
 
 		width: var(--buttonSize);
 		height: var(--buttonSize);
@@ -56,8 +54,15 @@
 		border-radius: calc(var(--barHeight) / 2);
 		background-color: var(--color1);
 
+		/* backdrop-filter: invert(70%); */
+		/* backdrop-filter: blur(3px); */
+
+		/* color: var(--color1); */
+		box-shadow: 0 0 3px black, 0 0 3px black;
+
 		transition: all var(--animTime1);
 		transition-timing-function: ease-in-out;
+
 	}
 
 	.one {
@@ -86,13 +91,5 @@
 	}
 	.openMobileMenu .two {
 		transform: rotate(-45deg);
-	}
-
-
-
-	@media screen and (min-width: 800px) {
-		.humburger{
-			display: none;
-		}
 	}
 </style>
