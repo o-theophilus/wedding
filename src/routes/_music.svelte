@@ -25,6 +25,7 @@
 	bind:this={myAudio}
 	src="/music/Francis_And_The_Lights_-_May_I_Have_This_Dance_Remix_Ft_Chance_The_Rapper.mp3"
 	preload="auto"
+	loop
 >
 	<track kind="captions" />
 </audio>
@@ -50,9 +51,8 @@
 		height: var(--size);
 		border-radius: 50%;
 
-
 		fill: var(--color2);
-		
+
 		transition: all var(--animTime1);
 		transition-timing-function: ease-in-out;
 	}
