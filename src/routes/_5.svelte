@@ -2,7 +2,7 @@
 	import Section from './_section.svelte';
 </script>
 
-<div id="five">
+<div id="five" class="page">
 	<Section bgi="engage" let:bgi>
 		<img src="/image/flower5.gif" alt="flower" />
 		<h1 class:v1={bgi != null}>The day we got engaged</h1>

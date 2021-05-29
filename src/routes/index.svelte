@@ -11,6 +11,7 @@
 	import Gift from './_8.svelte';
 	import Footer from './_footer.svelte';
 	import Blocker from './_blocker.svelte';
+	
 
 	import { title } from '$lib/store.js';
 </script>
@@ -23,12 +24,13 @@
 <Story />
 <Date />
 <Details />
+<Form />
 <Story2 />
 <Gallery />
-<Form />
 <Gift />
 <Footer />
 
 <TitleBar />
 <Blocker />
 <TitleBar2 />
+

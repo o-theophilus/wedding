@@ -5,15 +5,15 @@
 </script>
 
 {#if $isMobile}
-	<div class="section">
+	<header>
 		<div class="block">
 			<Hamburger />
 		</div>
-	</div>
+	</header>
 {/if}
 
 <style>
-	.section {
+	header {
 		position: fixed;
 		top: 0;
 		width: 100%;

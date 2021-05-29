@@ -14,9 +14,9 @@
 	<div class="link" on:click={() => scrollTo('two')}>Our Story</div>
 	<div class="link" on:click={() => scrollTo('three')}>Date</div>
 	<div class="link" on:click={() => scrollTo('four')}>Details</div>
-	<div class="link" on:click={() => scrollTo('five')}>Engaged</div>
-	<div class="link" on:click={() => scrollTo('six')}>Photos</div>
 	<div class="link" on:click={() => scrollTo('seven')}>RSVP</div>
+	<div class="link" on:click={() => scrollTo('five')}>Engaged</div>
+	<div class="link" on:click={() => scrollTo('six')}>Photo</div>
 	<div class="link" on:click={() => scrollTo('eight')}>Gift</div>
 </div>
 
@@ -32,14 +32,24 @@
 
 		text-align: right;
 
-		color: var(--color1);
-		text-shadow: 0 0 3px black, 0 0 3px black;
+		color: var(--color3);
+		/* text-shadow: 0 0 3px black, 0 0 3px black; */
 
 		cursor: pointer;
+
+		font-size: 2.5em;
+		font-family: font2;
+		
+		transition: all var(--animTime1);
+		transition-timing-function: ease-in-out;
+	}
+	.link:hover {
+		color: var(--color2);
 	}
 	.opt {
-		font-size: 1.5em;
+		font-size: 3em;
 		font-family: font1;
+		font-weight: bolder;
 	}
 	.notMobile {
 		position: static;
@@ -59,6 +69,7 @@
 		align-items: center;
 
 		cursor: pointer;
+		font-size: 1em;
 	}
 	.notMobile .opt {
 		display: none;

@@ -1,10 +1,12 @@
 <script>
 	export let bgi = null;
 	export let blend = true;
+
+	export let noCenterText = false;
 </script>
 
-<div
-	class="section"
+<section
+	class:centerText={!noCenterText}
 	class:bgi={bgi != null}
 	class:blend={bgi != null && blend}
 	style={bgi != null ? `background-image: url('/image/${bgi}.jpg')` : ''}
@@ -12,11 +14,10 @@
 	<div class="block">
 		<slot {bgi} />
 	</div>
-	<!-- <slot name="bottom" /> -->
-</div>
+</section>
 
 <style>
-	.section {
+	section {
 		position: relative;
 
 		background-blend-mode: multiply;
@@ -36,8 +37,6 @@
 		justify-content: center;
 		align-items: center;
 		gap: 20px;
-
-		/* min-height: 100vh; */
 
 		margin: auto;
 		padding: calc(var(--padding) * 4) var(--padding);

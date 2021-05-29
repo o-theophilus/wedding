@@ -1,16 +1,16 @@
-<div class="section">
+<footer>
 	<div class="block">
 		<p>
 			Made with <span>❤</span> by
-			<a rel="external" href="https://theophilus.vercel.app/" target="_blank"
+			<a rel="external" href="https://theophilus.website/" target="_blank"
 				><strong>Theophilus</strong></a
 			>
 		</p>
 	</div>
-</div>
+</footer>
 
 <style>
-	.section {
+	footer {
 		background-color: var(--color3);
 		color: var(--color1);
 	}

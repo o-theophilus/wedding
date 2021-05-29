@@ -2,4 +2,4 @@ import { writable } from 'svelte/store';
 
 export const openMobileMenu = writable(false);
 export const isMobile = writable(true);
-export const title = writable("Wife & Man");
+export const title = writable("Mr. & Mrs.");

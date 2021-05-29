@@ -1,4 +1,6 @@
 <script>
+	import { isMobile } from '$lib/store.js';
+
 	export let text = 'Scroll';
 	export let id;
 
@@ -10,7 +12,7 @@
 	};
 </script>
 
-<div class="scroller" on:click={scrollTo}>
+<div class="scroller" on:click={scrollTo} class:isMobile={$isMobile}>
 	<div class="mouse" />
 	<div class="wheel" />
 	{text}
@@ -18,15 +20,18 @@
 
 <style>
 	.scroller {
+		display: none;
+		flex-direction: column;
+		align-items: center;
+
 		position: absolute;
 		bottom: 20px;
 		right: 20px;
 
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-
 		cursor: pointer;
+	}
+	.isMobile {
+		display: flex;
 	}
 	.mouse {
 		width: 25px;

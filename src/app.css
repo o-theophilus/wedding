@@ -19,9 +19,7 @@
 	padding: 0;
 
 	font-family: font3;
-	text-align: center;
 }
-
 :root {
 	--color0: rgba(0, 0, 0, 0);
 	--color1: white;
@@ -30,6 +28,7 @@
 	--color4: rgb(243, 243, 243);
 	--fColor1: white;
 	--fColor2: rgb(82, 66, 142);
+	--fColor3: red;
 
 	--mobile: 800px;
 	--tab: 1200px;
@@ -40,6 +39,22 @@
 	--padding: 40px;
 	--animTime1: 100ms;
 	--blendColor: rgba(0, 0, 0, 0.6);
+}
+
+/* html,
+body
+,.block
+{
+	height: 100%;
+}
+.page,
+section,
+.block
+{
+	min-height: 100%;
+} */
+.centerText * {
+	text-align: center;
 }
 
 h1,

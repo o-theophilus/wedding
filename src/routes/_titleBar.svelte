@@ -11,7 +11,7 @@
 	};
 </script>
 
-<div class="section">
+<header>
 	<div class="block">
 		<img src="/image/title.jpg" class="icon" alt="logo" on:click={() => scrollTo('one')} />
 		<h2 on:click={() => scrollTo('one')}>{$title}</h2>
@@ -19,17 +19,18 @@
 			<Nav />
 		{/if}
 	</div>
-</div>
+</header>
 
 <style>
-	.section {
+	header {
 		position: fixed;
 		top: 0;
 		width: 100%;
 
-		/* backdrop-filter: blur(3px); */
-		color: var(--color1);
-		text-shadow: 0 0 3px black, 0 0 3px black;
+		backdrop-filter: blur(3px);
+		background-color: rgba(255, 255, 255, 0.789);
+		color: var(--color3);
+		/* text-shadow: 0 0 3px black, 0 0 3px black; */
 	}
 	.block {
 		display: flex;

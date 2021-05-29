@@ -1,16 +1,22 @@
 <script>
 	import Section from './_section.svelte';
+	import { template, attend, meal } from './_comp/template.js';
 
 	let form = {
 		name: '',
-		email: '',
 		phone: '',
+		email: '',
+		attend: '',
+		meal: '',
 		msg: ''
 	};
 
 	let err = {
 		name: '',
+		phone: '',
 		email: '',
+		attend: '',
+		meal: '',
 		msg: '',
 		form: ''
 	};
@@ -20,10 +26,27 @@
 
 	const validate = () => {
 		err.name = form.name === '' ? 'Please enter your name' : '';
-		err.email = /\S+@\S+\.\S+/.test(form.email) ? '' : 'Please enter a valid email address';
-		err.msg = form.msg === '' ? 'Please enter your message' : '';
+		if (form.email != '') {
+			err.email = /\S+@\S+\.\S+/.test(form.email) ? '' : 'Please enter a valid email address';
+		}
+		err.phone = form.phone === '' ? 'Please enter your phone number' : '';
+		err.attend = form.attend === '' ? 'Please select an option' : '';
+		if (form.attend == attend[0]) {
+			err.meal = form.meal === '' ? 'Please select an option' : '';
+		} else {
+			form.meal = '';
+		}
+		// err.msg = form.msg === '' ? 'Please select an option' : '';
 
-		if (err.name === '' && err.email === '' && err.msg === '' && err.form === '') {
+		if (
+			err.name === '' &&
+			err.phone === '' &&
+			err.email === '' &&
+			err.attend === '' &&
+			err.meal === '' &&
+			err.msg === '' &&
+			err.form === ''
+		) {
 			submit();
 		}
 	};
@@ -46,77 +69,41 @@
 		}
 	};
 
-	const attend = ['Yes, I will be there', "Sorry, I can't come"];
-
-	const meal = ['I eat anything', 'Intercontinental', 'African', 'Vegetarian'];
-
-	const template = [
-		{
-			name: 'Nice Job!',
-			text: 'Wow!! Your site is awesome, Keep it up Bro.'
-		},
-		{
-			name: 'Lets work together',
-			text: `Hi Theo,
-	
-I like what you do, lets work together.
-
-You can reach me on my email or call +_____
-`
-		},
-		{
-			name: 'Learn',
-			text: `Hi Theo,
-
-I'll like so learn _____ from you.
-`
-		}
-	];
 	let store = '';
 </script>
 
-<div id="seven">
-	<Section let:bgi>
+<div id="seven" class="page">
+	<Section let:bgi noCenterText bgi="title">
 		<h1 class:v1={bgi != null}>RSVP</h1>
 		<div class="form_block">
-			{#if sending}
-				<div class="blocker">
-					<h2>Sending . . .</h2>
-				</div>
-			{/if}
 			{#if !sent}
 				<form on:submit|preventDefault={validate}>
 					<div class="inputGroup">
 						<label for="name">Your Name</label>
-						<input placeholder="Your Name" type="text" id="name" bind:value={form.name} />
-						<!-- <svg width="30px" height="30px">
-						<SVG type="username" />
-					</svg> -->
+						<input placeholder="e.g. John Doe" type="text" id="name" bind:value={form.name} />
+
 						{#if err.name}
 							<p class="err">
 								{err.name}
 							</p>
 						{/if}
 					</div>
+
 					<div class="inputGroup">
-						<label for="email">Your E-mail</label>
-						<input placeholder="Your E-mail" type="text" id="email" bind:value={form.email} />
-						<!-- <svg width="30px" height="30px">
-						<SVG type="emailAddress" />
-					</svg> -->
-						{#if err.email}
+						<label for="phone">Your Phone Number</label>
+						<input placeholder="e.g. 08012345678" type="text" id="phone" bind:value={form.phone} />
+
+						{#if err.phone}
 							<p class="err">
-								{err.email}
+								{err.phone}
 							</p>
 						{/if}
 					</div>
 
 					<div class="inputGroup">
-						<label for="phone">Your Phone Number</label>
-						<input placeholder="Your Phone Number" type="text" id="phone" bind:value={form.phone} />
-						<!-- <svg width="30px" height="30px">
-						<SVG type="phone" />
-					</svg> -->
+						<label for="email">Your E-mail (Optional)</label>
+						<input placeholder="e.g. john@doe.com" type="text" id="email" bind:value={form.email} />
+
 						{#if err.email}
 							<p class="err">
 								{err.email}
@@ -128,19 +115,31 @@ I'll like so learn _____ from you.
 						<p>Will you attend?</p>
 						{#each attend as a, i}
 							<br />
-							<input type="radio" id="attend{i}" value={a} />
+							<input type="radio" bind:group={form.attend} id="attend{i}" value={a} />
 							<label for="attend{i}">{a}</label>
 						{/each}
+						{#if err.attend}
+							<p class="err">
+								{err.attend}
+							</p>
+						{/if}
 					</div>
 
-					<div class="inputGroup">
-						<p>Your Meal Preference</p>
-						{#each meal as a, i}
-							<br />
-							<input type="radio" id="meal{i}" value={a} />
-							<label for="meal{i}">{a}</label>
-						{/each}
-					</div>
+					{#if form.attend != attend[1]}
+						<div class="inputGroup">
+							<p>Your Meal Preference</p>
+							{#each meal as a, i}
+								<br />
+								<input type="radio" bind:group={form.meal} id="meal{i}" value={a} />
+								<label for="meal{i}">{a}</label>
+							{/each}
+							{#if err.meal}
+								<p class="err">
+									{err.meal}
+								</p>
+							{/if}
+						</div>
+					{/if}
 
 					<div class="inputGroup">
 						<select name="template" id="" bind:value={form.msg}>
@@ -173,11 +172,8 @@ I'll like so learn _____ from you.
 					</div>
 				</form>
 			{:else}
-				<p>Thank You</p>
-				<br />
-				<br />
-
-				Back to <a href="/">Home</a>
+				<h2>Thank You</h2>
+				<p>form Submitted</p>
 			{/if}
 		</div>
 	</Section>
@@ -185,14 +181,30 @@ I'll like so learn _____ from you.
 
 <style>
 	* {
-		text-align: left;
+		outline: none;
+	}
+	.form_block {
+		width: 100%;
+
+		padding: 40px 20px;
+
+		color: black;
+		background-color: rgba(255, 255, 255, 0.802);
+		backdrop-filter: blur(3px);
+
+		border-radius: 25px;
+	}
+
+	form {
+		max-width: 400px;
+		margin: auto;
 	}
 
 	.inputGroup {
 		--inputHeight: 50px;
-
-		position: relative;
-		margin-top: 20px;
+	}
+	.inputGroup:not(:first-child) {
+		margin-top: 40px;
 	}
 	label {
 		display: inline-block;
@@ -216,85 +228,37 @@ I'll like so learn _____ from you.
 		transition: all var(--animTime1);
 		transition-timing-function: ease-in-out;
 	}
-	textarea {
-		resize: none;
-		height: 150px;
-	}
-	input:focus,
-	textarea:focus {
-		outline: none;
-		background-color: var(--color1);
-		border-color: var(--color2);
-	}
 
-	[type='submit'] {
-		background-color: var(--color3);
-		color: var(--color1);
-		text-align: center;
-	}
-	[type='submit']:hover,
-	[type='submit']:focus {
-		outline: none;
-		background-color: var(--color2);
-		/* border-color: var(--colorNill); */
-	}
-	/* 
-	[type='text'] {
-		padding-left: var(--inputHeight);
-	}
-	[type='text']:hover + svg,
-	[type='text']:focus + svg {
-		fill: var(--color3);
-	}
-	svg {
-		--svgSize: 30px;
-
-		position: absolute;
-
-		top: 50px;
-		left: calc((var(--inputHeight) - var(--svgSize)) / 2);
-
-		fill: var(--color2);
-
-		transition: all var(--animTime1);
-		transition-timing-function: ease-in-out;
-	} */
 	select {
-		background-color: var(--color1);
+		background-color: var(--color0);
 		font-size: 16px;
 		border: none;
 		margin-bottom: 10px;
 	}
-	select:focus,
-	select:active {
-		outline: none;
-		border: none;
+	textarea {
+		display: block;
+		resize: none;
+		height: 150px;
+	}
+	[type='submit'] {
+		background-color: var(--color3);
+		color: var(--color1);
+		text-align: center;
+		cursor: pointer;
+	}
+
+	input:focus,
+	textarea:focus {
+		background-color: var(--color1);
+		border-color: var(--color2);
+	}
+
+	[type='submit']:hover,
+	[type='submit']:focus {
+		background-color: var(--color2);
 	}
 
 	.err {
 		color: var(--fColor3);
-	}
-
-	/* ************************* */
-	.form_block {
-		position: relative;
-	}
-
-	.blocker {
-		position: absolute;
-		background-color: var(--color1);
-
-		z-index: 1;
-		width: 100%;
-		height: 100%;
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.busy {
-		max-width: 200px;
 	}
 </style>

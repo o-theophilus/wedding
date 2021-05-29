@@ -5,7 +5,7 @@
 	import { title } from '$lib/store.js';
 </script>
 
-<div id="one">
+<div id="one" class="page">
 	<Section let:bgi bgi="title" blend={false}>
 		<div class="subject">
 			<img class="pic" src="/image/title.jpg" alt="title" />

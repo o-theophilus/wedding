@@ -1,8 +1,9 @@
 <script>
 	import Section from './_section.svelte';
+	import SVG from './_svg.svelte';
 </script>
 
-<div id="four">
+<div id="four" class="page">
 	<Section let:bgi>
 		<img src="/image/flower4.gif" alt="flower" />
 		<h1 class:v1={bgi != null}>Wedding Details</h1>
@@ -18,7 +19,7 @@
 		<div class="details">
 			<div class="sec">
 				<img src="/image/title.jpg" alt="couple" />
-				<div class="icon">i</div>
+				<svg><SVG type="ceremony" /></svg>
 				<h1>The Ceremony</h1>
 				<p>
 					THURSDAY 17TH DECEMBER
@@ -33,7 +34,7 @@
 			</div>
 			<div class="sec">
 				<img src="/image/title.jpg" alt="couple" />
-				<div class="icon">i</div>
+				<svg><SVG type="reception" /></svg>
 				<h1>The Reception</h1>
 				<p>
 					THURSDAY 17TH DECEMBER
@@ -48,7 +49,7 @@
 			</div>
 			<div class="sec">
 				<img src="/image/title.jpg" alt="couple" />
-				<div class="icon">i</div>
+				<svg><SVG type="party" /></svg>
 				<h1>The After Party</h1>
 				<p>THURSDAY 17TH DECEMBER</p>
 				<p>
@@ -72,26 +73,28 @@
 </div>
 
 <style>
+	img {
+		width: 100%;
+		max-width: 500px;
+	}
+
 	.details {
 		display: flex;
 		flex-direction: column;
 		gap: 80px;
 	}
-	img {
+	.details img {
 		width: 300px;
 		height: 300px;
 
 		border-radius: 50%;
 		object-fit: cover;
 	}
-	.icon {
+	SVG {
 		width: 50px;
 		height: 50px;
 
-		border-radius: 50%;
-		background-color: red;
-
-		margin: auto;
+		fill: var(--color2);
 	}
 	.sec {
 		display: flex;
@@ -99,7 +102,7 @@
 		align-items: center;
 
 		/* justify-content: center; */
-		gap: 10px;
+		gap: 20px;
 	}
 	.rsvp {
 		border-top: 2px solid var(--color2);
