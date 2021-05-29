@@ -11,7 +11,7 @@
 	import Gift from './_8.svelte';
 	import Footer from './_footer.svelte';
 	import Blocker from './_blocker.svelte';
-	
+	import Music from './_music.svelte';
 
 	import { title } from '$lib/store.js';
 </script>
@@ -33,4 +33,4 @@
 <TitleBar />
 <Blocker />
 <TitleBar2 />
-
+<Music />

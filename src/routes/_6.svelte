@@ -4,15 +4,15 @@
 
 	let active = false;
 	let images = [
-		{ image: 'title', note: 'This is not real' },
-		{ image: 'engage', note: 'This is not real' },
-		{ image: 'date', note: 'This is not real' },
-		{ image: 'gift', note: 'This is not real' },
-		{ image: 'title', note: 'This is not real' },
-		{ image: 'title', note: 'This is not real' },
-		{ image: 'title', note: 'This is not real' },
-		{ image: 'title', note: 'This is not real' },
-		{ image: 'title', note: 'This is not real' }
+		{ image: 'title', caption: 'This is the first' },
+		{ image: 'engage', caption: 'This is not real' },
+		{ image: 'date', caption: 'This is not real' },
+		{ image: 'gift', caption: 'This is not real' },
+		{ image: 'title', caption: 'This is the first' },
+		{ image: 'engage', caption: 'This is not real' },
+		{ image: 'date', caption: 'This is not real' },
+		{ image: 'gift', caption: 'This is not real' },
+		{ image: 'title', caption: 'This is the first' }
 	];
 
 	let selected;

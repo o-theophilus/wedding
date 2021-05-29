@@ -10,7 +10,8 @@
 	class:bgi={bgi != null}
 	class:blend={bgi != null && blend}
 	style={bgi != null ? `background-image: url('/image/${bgi}.jpg')` : ''}
->
+	>
+<!-- <img src="/image/{bgi}.jpg" alt="img"> -->
 	<div class="block">
 		<slot {bgi} />
 	</div>
@@ -28,6 +29,15 @@
 	.bgi {
 		color: var(--fColor1);
 	}
+	/* img{
+		position: static;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+
+		object-fit: cover;
+	} */
 	.blend {
 		background-color: var(--blendColor);
 	}

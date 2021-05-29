@@ -1,5 +1,6 @@
 <script>
 	import Section from './_section.svelte';
+	
 	import Scroller from './_scroller.svelte';
 
 	import { title } from '$lib/store.js';
@@ -14,6 +15,7 @@
 		</div>
 
 		<h1 class:v1={bgi != null}>{$title}</h1>
+		
 		<Scroller id="two" />
 	</Section>
 </div>
