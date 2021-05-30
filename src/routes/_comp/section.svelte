@@ -5,15 +5,7 @@
 	export let blend = true;
 
 	export let noCenterText = false;
-
-	let innerHeight;
-	let outerHeight;
-
-	// $: console.log(innerHeight);
-	// $: console.log(outerHeight);
 </script>
-
-<svelte:window bind:innerHeight bind:outerHeight />
 
 <section
 	{id}
@@ -21,7 +13,7 @@
 	class:blend={bgi != null && blend}
 	style={bgi != null ? `background-image: url('/image/${bgi}.jpg')` : ''}
 >
-	<!-- <div class="block" style="min-height: {outerHeight}px;"> -->
+	<!-- <img src="/image/{bgi}.jpg" alt=""> -->
 	<div class="block">
 		<slot />
 	</div>
@@ -32,7 +24,7 @@
 		position: relative;
 
 		background-blend-mode: multiply;
-		background-position: center;
+		background-position: bottom;
 		background-size: auto 100vh;
 		background-attachment: fixed;
 	}
@@ -48,7 +40,7 @@
 		gap: 20px;
 
 		min-height: 100vh;
-		
+
 		margin: auto;
 		padding: calc(var(--padding) * 4) var(--padding);
 	}
