@@ -13,7 +13,7 @@
 
 <header class="glass">
 	<div class="block">
-		<img src="/image/title.jpg" alt="logo" on:click={() => scrollTo('one')} />
+		<img src="/logo.png" alt="logo" on:click={() => scrollTo('one')} />
 		<h2 on:click={() => scrollTo('one')}>{$title}</h2>
 		{#if !$isMobile}
 			<Nav />

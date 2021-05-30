@@ -3,7 +3,7 @@
 	import Scroller from './_comp/scroller.svelte';
 </script>
 
-<Section bgi="gift" id="eight">
+<Section bgi="bg4" id="eight">
 	<h1>Send Gifts</h1>
 	<br />
 	<p>Bank Name:</p>

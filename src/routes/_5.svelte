@@ -1,10 +1,13 @@
 <script>
+	import { browser } from '$app/env';
+	import { setCookie, getCookie } from '$lib/cookie.js';
+
 	import Section from './_comp/section.svelte';
 	import SVG from './_comp/svg.svelte';
 	import { template, attend, meal } from './_comp/template.js';
 	import { days } from '$lib/store.js';
 
-	let treshold = 12;
+	let formDaysExpire = 12;
 
 	let form = {
 		name: '',
@@ -27,6 +30,11 @@
 
 	let sent = false;
 	let sending = false;
+
+	if (browser) {
+		sent = getCookie('rsvp');
+		console.log(sent);
+	}
 
 	const validate = () => {
 		err.name = form.name === '' ? 'Please enter your name' : '';
@@ -68,6 +76,7 @@
 		sending = false;
 		if (resp.ok) {
 			sent = true;
+			setCookie('rsvp', 'true', 365);
 		} else {
 			err.form = data.error;
 		}
@@ -76,116 +85,129 @@
 	let store = '';
 </script>
 
-<Section id="five" noCenterText>
-	<h1>RSVP</h1>
-	<div class="rsvp">
-		<p>John Doe: 08012345678</p>
-	</div>
-	{#if $days >= treshold}
-		{#if !sent}
-			<form on:submit|preventDefault={validate}>
-				<div class="inputGroup">
-					<label for="name">Your Name</label>
-					<input placeholder="e.g. John Doe" type="text" id="name" bind:value={form.name} />
-
-					{#if err.name}
-						<p class="err">
-							{err.name}
-						</p>
-					{/if}
-				</div>
-
-				<div class="inputGroup">
-					<label for="phone">Your Phone Number</label>
-					<input placeholder="e.g. 08012345678" type="text" id="phone" bind:value={form.phone} />
-
-					{#if err.phone}
-						<p class="err">
-							{err.phone}
-						</p>
-					{/if}
-				</div>
-
-				<div class="inputGroup">
-					<label for="email">Your E-mail (Optional)</label>
-					<input placeholder="e.g. john@doe.com" type="text" id="email" bind:value={form.email} />
-
-					{#if err.email}
-						<p class="err">
-							{err.email}
-						</p>
-					{/if}
-				</div>
-
-				<div class="inputGroup">
-					<p>Will you attend?</p>
-					{#each attend as a, i}
-						<br />
-						<input type="radio" bind:group={form.attend} id="attend{i}" value={a} />
-						<label for="attend{i}">{a}</label>
-					{/each}
-					{#if err.attend}
-						<p class="err">
-							{err.attend}
-						</p>
-					{/if}
-				</div>
-
-				{#if form.attend != attend[1]}
+<section id="five" noCenterText>
+	<div class="block">
+		<h1>RSVP</h1>
+		<div class="rsvp">
+			<p>John Doe: 08012345678</p>
+		</div>
+		{#if $days >= formDaysExpire}
+			{#if !sent}
+				<form on:submit|preventDefault={validate}>
 					<div class="inputGroup">
-						<p>Your Meal Preference</p>
-						{#each meal as a, i}
-							<br />
-							<input type="radio" bind:group={form.meal} id="meal{i}" value={a} />
-							<label for="meal{i}">{a}</label>
-						{/each}
-						{#if err.meal}
+						<label for="name">Your Name</label>
+						<input placeholder="e.g. John Doe" type="text" id="name" bind:value={form.name} />
+
+						{#if err.name}
 							<p class="err">
-								{err.meal}
+								{err.name}
 							</p>
 						{/if}
 					</div>
-				{/if}
 
-				<div class="inputGroup">
-					<select name="template" id="" bind:value={form.msg}>
-						<option value={store}>Message (Optional)</option>
-						{#each template as temp}
-							<option value={temp.text}>{temp.name}</option>
+					<div class="inputGroup">
+						<label for="phone">Your Phone Number</label>
+						<input placeholder="e.g. 08012345678" type="text" id="phone" bind:value={form.phone} />
+
+						{#if err.phone}
+							<p class="err">
+								{err.phone}
+							</p>
+						{/if}
+					</div>
+
+					<div class="inputGroup">
+						<label for="email">Your E-mail (Optional)</label>
+						<input placeholder="e.g. john@doe.com" type="text" id="email" bind:value={form.email} />
+
+						{#if err.email}
+							<p class="err">
+								{err.email}
+							</p>
+						{/if}
+					</div>
+
+					<div class="inputGroup">
+						<p>Will you attend?</p>
+						{#each attend as a, i}
+							<br />
+							<input type="radio" bind:group={form.attend} id="attend{i}" value={a} />
+							<label for="attend{i}">{a}</label>
 						{/each}
-					</select>
+						{#if err.attend}
+							<p class="err">
+								{err.attend}
+							</p>
+						{/if}
+					</div>
 
-					<textarea
-						placeholder="Your Message"
-						id="message"
-						bind:value={form.msg}
-						on:input={() => (store = form.msg)}
-					/>
-					{#if err.msg}
+					{#if form.attend != attend[1]}
+						<div class="inputGroup">
+							<p>Your Meal Preference</p>
+							{#each meal as a, i}
+								<br />
+								<input type="radio" bind:group={form.meal} id="meal{i}" value={a} />
+								<label for="meal{i}">{a}</label>
+							{/each}
+							{#if err.meal}
+								<p class="err">
+									{err.meal}
+								</p>
+							{/if}
+						</div>
+					{/if}
+
+					<div class="inputGroup">
+						<select name="template" id="" bind:value={form.msg}>
+							<option value={store}>Message (Optional)</option>
+							{#each template as temp}
+								<option value={temp.text}>{temp.name}</option>
+							{/each}
+						</select>
+
+						<textarea
+							placeholder="Your Message"
+							id="message"
+							bind:value={form.msg}
+							on:input={() => (store = form.msg)}
+						/>
+						{#if err.msg}
+							<p class="err">
+								{err.msg}
+							</p>
+						{/if}
+					</div>
+					{#if err.form}
 						<p class="err">
-							{err.msg}
+							{err.form}
 						</p>
 					{/if}
-				</div>
-				{#if err.form}
-					<p class="err">
-						{err.form}
-					</p>
-				{/if}
 
-				<div class="inputGroup submit">
-					<input type="submit" value="Submit" />
+					<div class="inputGroup submit">
+						<input type="submit" value="Submit" />
+					</div>
+				</form>
+			{:else}
+				<div class="done">
+					<SVG type="check" />
 				</div>
-			</form>
-		{:else}
-			<div class="done">
-				<SVG type="check" />
-			</div>
+			{/if}
 		{/if}
-	{/if}
-</Section>
+	</div>
+</section>
 
 <style>
+	.block {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+
+		margin: auto;
+		padding: calc(var(--padding) * 4) var(--padding);
+	}
+
 	h1 {
 		color: var(--color2);
 	}

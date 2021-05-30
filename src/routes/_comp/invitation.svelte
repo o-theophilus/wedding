@@ -4,8 +4,8 @@
 
 <div class="details">
 	<div class="sec">
-		<img src="/image/title.jpg" alt="couple" />
-		<svg><SVG type="ceremony" /></svg>
+		<img src="/image/pic4.jpg" alt="couple" />
+		<svg><SVG size="70px" type="ceremony" /></svg>
 		<h1>The Ceremony</h1>
 		<p>
 			THURSDAY 17TH DECEMBER
@@ -20,8 +20,8 @@
 	</div>
 
 	<div class="sec">
-		<img src="/image/title.jpg" alt="couple" />
-		<svg><SVG type="reception" /></svg>
+		<img src="/image/pic5.jpg" alt="couple" />
+		<svg><SVG size="70px" type="reception" /></svg>
 		<h1>The Reception</h1>
 		<p>
 			THURSDAY 17TH DECEMBER
@@ -36,8 +36,8 @@
 	</div>
 
 	<div class="sec">
-		<img src="/image/title.jpg" alt="couple" />
-		<svg><SVG type="party" /></svg>
+		<img src="/image/pic6.jpg" alt="couple" />
+		<svg><SVG size="70px" type="party" /></svg>
 		<h1>The After Party</h1>
 		<p>THURSDAY 17TH DECEMBER</p>
 		<p>
@@ -62,8 +62,8 @@
 		object-fit: cover;
 	}
 	SVG {
-		width: 50px;
-		height: 50px;
+		width: 70px;
+		height: 70px;
 
 		fill: var(--color2);
 	}

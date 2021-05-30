@@ -13,7 +13,6 @@
 	class:blend={bgi != null && blend}
 	style={bgi != null ? `background-image: url('/image/${bgi}.jpg')` : ''}
 >
-	<!-- <img src="/image/{bgi}.jpg" alt=""> -->
 	<div class="block">
 		<slot />
 	</div>
@@ -24,9 +23,9 @@
 		position: relative;
 
 		background-blend-mode: multiply;
-		background-position: bottom;
-		background-size: auto 100vh;
-		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		/* background-attachment: fixed; */
 	}
 
 	.blend {

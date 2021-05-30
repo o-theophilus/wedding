@@ -1,9 +1,7 @@
-form submit cookies
-
-replace pic
 form messages
-compres files
-inviation code
 
-fixed bgi jump
+fixed bgi
+
+## feature to add
+inviation code
 animate image view change

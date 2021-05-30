@@ -4,7 +4,7 @@
 </script>
 
 <Section id="four">
-	<img src="/image/flower4.gif" alt="flower" />
+	<img src="/image/flower3.gif" alt="flower" />
 	<h1>Wedding Details</h1>
 	<h2>When & Where</h2>
 	<p>

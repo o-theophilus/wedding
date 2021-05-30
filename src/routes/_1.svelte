@@ -5,9 +5,9 @@
 	import { title } from '$lib/store.js';
 </script>
 
-<Section bgi="title" blend={false} id="one">
+<Section bgi="bg1" blend={false} id="one">
 	<div class="subject">
-		<img class="pic" src="/image/title.jpg" alt="title" />
+		<img class="pic" src="/image/pic7.jpg" alt="title" />
 		<img class="flower" src="image/flower1.png" alt="flower1" />
 		<img class="bird" src="image/bird.png" alt="bird" />
 	</div>
@@ -39,6 +39,8 @@
 	}
 	h1 {
 		color: var(--fColor1);
+		font-size: 4em;
+		text-shadow: 0 0 3px var(--color3), 0 0 3px var(--color3), 0 0 3px var(--color3);
 	}
 	.pic {
 		top: 12.5%;

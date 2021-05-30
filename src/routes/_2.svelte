@@ -3,7 +3,7 @@
 </script>
 
 <Section id="two">
-	<img src="/image/flower3.gif" alt="flower" />
+	<img src="/image/flower2.gif" alt="flower" />
 	<h1>Our Story</h1>
 	<h2>The 29th of October 2019</h2>
 	<p>

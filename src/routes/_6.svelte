@@ -2,8 +2,8 @@
 	import Section from './_comp/section.svelte';
 </script>
 
-<Section bgi="engage" id="six">
-	<img src="/image/flower5.gif" alt="flower" />
+<Section bgi="bg3" id="six">
+	<img src="/image/flower4.gif" alt="flower" />
 	<h1>The day we got engaged</h1>
 	<p>
 		He proposed on the 23rd of May 2020. It was an intimate proposal at his house immediately after

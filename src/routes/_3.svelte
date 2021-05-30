@@ -5,7 +5,7 @@
 	let time = new Date('June 12, 2021 10:00:00').getTime();
 </script>
 
-<Section bgi="date" id="three">
+<Section bgi="bg2" id="three">
 	<img src="/image/date.gif" alt="date" />
 	<br />
 	<h1>June 12th, 2021</h1>
