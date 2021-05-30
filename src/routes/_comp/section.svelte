@@ -21,7 +21,8 @@
 	class:blend={bgi != null && blend}
 	style={bgi != null ? `background-image: url('/image/${bgi}.jpg')` : ''}
 >
-	<div class="block" style="min-height: {outerHeight}px;">
+	<!-- <div class="block" style="min-height: {outerHeight}px;"> -->
+	<div class="block">
 		<slot />
 	</div>
 </section>
@@ -32,7 +33,7 @@
 
 		background-blend-mode: multiply;
 		background-position: center;
-		background-size: cover;
+		background-size: auto 100%;
 		background-attachment: fixed;
 	}
 
