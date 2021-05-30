@@ -49,7 +49,7 @@
 		border-radius: calc(var(--barHeight) / 2);
 		background-color: var(--color3);
 
-		box-shadow: 0 0 3px var(--color3), 0 0 3px var(--color3);
+		/* box-shadow: 0 0 3px var(--color3), 0 0 3px var(--color3); */
 
 		transition: all var(--animTime1);
 		transition-timing-function: ease-in-out;

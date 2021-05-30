@@ -33,7 +33,7 @@
 
 		background-blend-mode: multiply;
 		background-position: center;
-		background-size: auto 100%;
+		background-size: auto 100vh;
 		background-attachment: fixed;
 	}
 
@@ -47,6 +47,8 @@
 		align-items: center;
 		gap: 20px;
 
+		min-height: 100vh;
+		
 		margin: auto;
 		padding: calc(var(--padding) * 4) var(--padding);
 	}
