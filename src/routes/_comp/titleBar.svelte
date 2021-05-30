@@ -1,5 +1,5 @@
 <script>
-	import Nav from './_nav.svelte';
+	import Nav from './nav.svelte';
 
 	import { isMobile, title } from '$lib/store.js';
 
@@ -11,9 +11,9 @@
 	};
 </script>
 
-<header>
+<header class="glass">
 	<div class="block">
-		<img src="/image/title.jpg" class="icon" alt="logo" on:click={() => scrollTo('one')} />
+		<img src="/image/title.jpg" alt="logo" on:click={() => scrollTo('one')} />
 		<h2 on:click={() => scrollTo('one')}>{$title}</h2>
 		{#if !$isMobile}
 			<Nav />
@@ -23,14 +23,9 @@
 
 <style>
 	header {
+		width: 100%;
 		position: fixed;
 		top: 0;
-		width: 100%;
-
-		backdrop-filter: blur(3px);
-		background-color: rgba(255, 255, 255, 0.789);
-		color: var(--color3);
-		/* text-shadow: 0 0 3px black, 0 0 3px black; */
 	}
 	.block {
 		display: flex;

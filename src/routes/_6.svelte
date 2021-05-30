@@ -1,77 +1,25 @@
 <script>
-	import Section from './_section.svelte';
-	import Picture from './_picture.svelte';
-
-	let active = false;
-	let images = [
-		{ image: 'title', caption: 'This is the first' },
-		{ image: 'engage', caption: 'This is not real' },
-		{ image: 'date', caption: 'This is not real' },
-		{ image: 'gift', caption: 'This is not real' },
-		{ image: 'title', caption: 'This is the first' },
-		{ image: 'engage', caption: 'This is not real' },
-		{ image: 'date', caption: 'This is not real' },
-		{ image: 'gift', caption: 'This is not real' },
-		{ image: 'title', caption: 'This is the first' }
-	];
-
-	let selected;
-	const openImage = (i) => {
-		selected = i;
-		active = true;
-	};
+	import Section from './_comp/section.svelte';
 </script>
 
-<div id="six" class="page">
-	<Section let:bgi>
-		<h1 class:v1={bgi != null}>Photo Gallery</h1>
-	</Section>
-	<div class="gallery">
-		{#each images as img, i}
-			<img
-				src="/image/{img.image}.jpg"
-				alt="img"
-				on:click={() => {
-					openImage(i);
-				}}
-			/>
-		{/each}
-	</div>
-</div>
-{#if active}
-	<Picture {images} {selected} on:closed={() => (active = false)} />
-{/if}
+<Section bgi="engage" id="six">
+	<img src="/image/flower5.gif" alt="flower" />
+	<h1>The day we got engaged</h1>
+	<p>
+		He proposed on the 23rd of May 2020. It was an intimate proposal at his house immediately after
+		the lockdown ease. Cake, hanging balloons, petals and floating candles. He gave a beautiful
+		speech, got on one knee and asked me to marry him! I said ‘YES OF COURSE’ lol and friends that
+		were hidden in the room came out filming the moment. It was a lovely proposal and I am truly
+		excited about this beautiful journey because I know that this is God’s will. .
+	</p>
+</Section>
 
 <style>
-	.gallery {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 40px;
-
-		padding-bottom: 80px;
+	* {
+		color: var(--fColor1);
 	}
 	img {
-		--size: calc(100vw - (var(--padding) * 3));
-		width: var(--size);
-		height: var(--size);
-		border-radius: 10px;
-
-		object-fit: cover;
-
-		box-shadow: 0 0 3px black, 0 0 3px var(--color0);
-		cursor: pointer;
-
-		transition: all var(--animTime1);
-		transition-timing-function: ease-in-out;
-	}
-	img:hover {
-		transform: scale(1.1, 1.1);
-		box-shadow: 0 0 10px var(--color3), 0 0 10px var(--color3);
-	}
-	@media screen and (min-width: 800px) {
-		img {
-			--size: calc(100vw / 4);
-		}
+		width: 100%;
+		max-width: 500px;
 	}
 </style>

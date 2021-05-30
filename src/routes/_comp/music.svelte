@@ -1,5 +1,5 @@
 <script>
-	import SVG from './_svg.svelte';
+	import SVG from './svg.svelte';
 
 	let myAudio = {};
 
@@ -14,7 +14,7 @@
 	};
 </script>
 
-<div class="btn" on:click={togglePlay} class:playing>
+<div class="btn glass" on:click={togglePlay} class:playing>
 	{#if playing}
 		<SVG type="pause" size="20px" />
 	{:else}
@@ -45,7 +45,6 @@
 
 		cursor: pointer;
 
-		background-color: rgba(116, 116, 116, 0.255);
 		--size: 50px;
 		width: var(--size);
 		height: var(--size);

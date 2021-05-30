@@ -23,9 +23,9 @@
 :root {
 	--color0: rgba(0, 0, 0, 0);
 	--color1: white;
-	--color2: rgb(82, 66, 142);
 	--color3: black;
-	--color4: rgb(243, 243, 243);
+	--color2: rgb(82, 66, 142);
+
 	--fColor1: white;
 	--fColor2: rgb(82, 66, 142);
 	--fColor3: red;
@@ -38,23 +38,6 @@
 
 	--padding: 40px;
 	--animTime1: 200ms;
-	--blendColor: rgba(0, 0, 0, 0.6);
-}
-
-/* html,
-body
-,.block
-{
-	height: 100%;
-}
-.page,
-section,
-.block
-{
-	min-height: 100%;
-} */
-.centerText * {
-	text-align: center;
 }
 
 h1,
@@ -66,7 +49,6 @@ p {
 h1 {
 	font-family: font1;
 	font-size: 3rem;
-	color: var(--fColor2);
 }
 
 h2 {
@@ -76,7 +58,11 @@ p {
 	font-size: 1.1rem;
 }
 
-.v1 {
-	color: var(--fColor1);
-	text-shadow: 3px 3px 3px black, 0 0 3px black, 0 0 3px black;
+.centerText * {
+	text-align: center;
+}
+
+.glass {
+	background-color: rgba(255, 255, 255, 0.789);
+	backdrop-filter: blur(3px);
 }

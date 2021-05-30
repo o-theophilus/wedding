@@ -1,19 +1,11 @@
 <script>
-	import { onMount } from 'svelte';
-
 	import '../app.css';
 	import { isMobile, openMobileMenu } from '$lib/store.js';
 
-	const run = () => {
-		$isMobile = document.documentElement.clientWidth < 800;
-	};
-
-	$: $openMobileMenu = $isMobile == false ? false : $openMobileMenu;
-
-	onMount(() => {
-		window.addEventListener('resize', run);
-		run();
-	});
+	let innerWidth;
+	$: $isMobile = innerWidth < 800;
+	$: $openMobileMenu = !$isMobile ? false : $openMobileMenu;
 </script>
 
+<svelte:window bind:innerWidth />
 <slot />

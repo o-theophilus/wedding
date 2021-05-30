@@ -1,5 +1,5 @@
 <script>
-	import { isMobile, title } from '$lib/store.js';
+	import { title } from '$lib/store.js';
 
 	const scrollTo = (id) => {
 		let e = document.querySelector(`#${id}`);
@@ -9,19 +9,19 @@
 	};
 </script>
 
-<div class="nav" class:notMobile={!$isMobile}>
+<nav class="nav">
 	<div class="link opt" on:click={() => scrollTo('one')}>{$title}</div>
 	<div class="link" on:click={() => scrollTo('two')}>Our Story</div>
 	<div class="link" on:click={() => scrollTo('three')}>Date</div>
 	<div class="link" on:click={() => scrollTo('four')}>Details</div>
-	<div class="link" on:click={() => scrollTo('seven')}>RSVP</div>
-	<div class="link" on:click={() => scrollTo('five')}>Engaged</div>
-	<div class="link" on:click={() => scrollTo('six')}>Photo</div>
+	<div class="link" on:click={() => scrollTo('five')}>RSVP</div>
+	<div class="link" on:click={() => scrollTo('six')}>Engaged</div>
+	<div class="link" on:click={() => scrollTo('seven')}>Photo</div>
 	<div class="link" on:click={() => scrollTo('eight')}>Gift</div>
-</div>
+</nav>
 
 <style>
-	.nav {
+	nav {
 		position: absolute;
 		top: 100px;
 		right: 20px;
@@ -33,13 +33,12 @@
 		text-align: right;
 
 		color: var(--color3);
-		/* text-shadow: 0 0 3px black, 0 0 3px black; */
 
 		cursor: pointer;
 
 		font-size: 2.5em;
 		font-family: font2;
-		
+
 		transition: all var(--animTime1);
 		transition-timing-function: ease-in-out;
 	}
@@ -51,27 +50,30 @@
 		font-family: font1;
 		font-weight: bolder;
 	}
-	.notMobile {
-		position: static;
 
-		display: flex;
-		margin-left: auto;
+	@media screen and (min-width: 800px) {
+		nav {
+			position: static;
 
-		height: 100%;
-	}
-	.notMobile .link {
-		display: flex;
-		height: 100%;
+			display: flex;
+			margin-left: auto;
 
-		padding: 0 10px;
+			height: 100%;
+		}
+		nav .link {
+			display: flex;
+			height: 100%;
 
-		justify-content: center;
-		align-items: center;
+			padding: 0 10px;
 
-		cursor: pointer;
-		font-size: 1em;
-	}
-	.notMobile .opt {
-		display: none;
+			justify-content: center;
+			align-items: center;
+
+			cursor: pointer;
+			font-size: 1em;
+		}
+		nav .opt {
+			display: none;
+		}
 	}
 </style>

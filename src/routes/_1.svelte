@@ -1,39 +1,34 @@
 <script>
-	import Section from './_section.svelte';
-	
-	import Scroller from './_scroller.svelte';
+	import Section from './_comp/section.svelte';
+	import Scroller from './_comp/scroller.svelte';
 
 	import { title } from '$lib/store.js';
 </script>
 
-<div id="one" class="page">
-	<Section let:bgi bgi="title" blend={false}>
-		<div class="subject">
-			<img class="pic" src="/image/title.jpg" alt="title" />
-			<img class="flower" src="image/flower1.png" alt="flower1" />
-			<img class="bird" src="image/bird.png" alt="bird" />
-		</div>
+<Section bgi="title" blend={false} id="one">
+	<div class="subject">
+		<img class="pic" src="/image/title.jpg" alt="title" />
+		<img class="flower" src="image/flower1.png" alt="flower1" />
+		<img class="bird" src="image/bird.png" alt="bird" />
+	</div>
 
-		<h1 class:v1={bgi != null}>{$title}</h1>
-		
-		<Scroller id="two" />
-	</Section>
-</div>
+	<h1>{$title}</h1>
+
+	<Scroller id="two" />
+</Section>
 
 <style>
-	#one {
-		--imagePad: 60px;
-		--imgMaxWidth: 400px;
-	}
-
 	.subject {
+		--imagePad: 60px;
+		--imgMaxSize: 400px;
+
 		position: relative;
 
 		width: calc(100vw - var(--imagePad));
 		height: calc(100vw - var(--imagePad));
 
-		max-width: var(--imgMaxWidth);
-		max-height: var(--imgMaxWidth);
+		max-width: var(--imgMaxSize);
+		max-height: var(--imgMaxSize);
 
 		margin: 0 auto;
 
@@ -41,6 +36,9 @@
 	}
 	img {
 		position: absolute;
+	}
+	h1 {
+		color: var(--fColor1);
 	}
 	.pic {
 		top: 12.5%;
@@ -82,13 +80,13 @@
 	}
 
 	@media screen and (min-width: 800px) {
-		#one {
-			--imgMaxWidth: 450px;
+		.subject {
+			--imgMaxSize: 450px;
 		}
 	}
 	@media screen and (min-width: 1200px) {
-		#one {
-			--imgMaxWidth: 500px;
+		.subject {
+			--imgMaxSize: 500px;
 		}
 	}
 </style>

@@ -33,16 +33,11 @@
 		width: var(--buttonSize);
 		height: var(--buttonSize);
 
-		border-radius: var(--bRadius);
 		cursor: pointer;
-		background-color: var(--colorNill);
+		pointer-events: auto;
 
 		transition: all var(--animTime1);
 		transition-timing-function: ease-in-out;
-
-		pointer-events: auto;
-
-		margin-left: auto;
 	}
 
 	.humburger div {
@@ -52,17 +47,12 @@
 		width: var(--barWidth);
 
 		border-radius: calc(var(--barHeight) / 2);
-		background-color: var(--color1);
+		background-color: var(--color3);
 
-		/* backdrop-filter: invert(70%); */
-		/* backdrop-filter: blur(3px); */
-
-		/* color: var(--color1); */
-		box-shadow: 0 0 3px black, 0 0 3px black;
+		box-shadow: 0 0 3px var(--color3), 0 0 3px var(--color3);
 
 		transition: all var(--animTime1);
 		transition-timing-function: ease-in-out;
-
 	}
 
 	.one {

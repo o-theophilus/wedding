@@ -1,5 +1,7 @@
 <script>
-	let days;
+	import { days } from '$lib/store.js';
+
+	// let days;
 	let hours;
 	let minutes;
 	let seconds;
@@ -11,7 +13,7 @@
 		let now = new Date().getTime();
 		distance = time - now;
 
-		days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		$days = Math.floor(distance / (1000 * 60 * 60 * 24));
 		hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 		minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 		seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -21,10 +23,10 @@
 
 <div class="count">
 	{#if distance > 0}
-		{#if days > 0}
+		{#if $days > 0}
 			<div class="grp">
-				<h2>{days}</h2>
-				<p>Day{days > 1 ? 's' : ''}</p>
+				<h2>{$days}</h2>
+				<p>Day{$days > 1 ? 's' : ''}</p>
 			</div>
 		{/if}
 		{#if hours > 0}
@@ -52,8 +54,8 @@
 	.count {
 		display: flex;
 		gap: 20px;
-		/* width: 100%;
-		max-width: 300px; */
+
+		color: var(--fColor1);
 	}
 
 	h2 {

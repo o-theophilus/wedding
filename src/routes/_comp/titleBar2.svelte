@@ -1,5 +1,5 @@
 <script>
-	import Hamburger from './_mmb.svelte';
+	import Hamburger from './mmb.svelte';
 
 	import { isMobile } from '$lib/store.js';
 </script>
@@ -20,13 +20,12 @@
 
 		pointer-events: none;
 		color: var(--color1);
-		text-shadow: 0 0 3px black, 0 0 3px black;
 	}
 	.block {
 		display: flex;
 		align-items: center;
+		justify-content: flex-end;
 
-		gap: 20px;
 		height: var(--titleHeight);
 
 		margin: auto;

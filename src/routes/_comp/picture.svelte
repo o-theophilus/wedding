@@ -1,6 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import SVG from './_svg.svelte';
+	import SVG from './svg.svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -18,7 +18,7 @@
 </script>
 
 <div
-	class="blocker"
+	class="blocker glass"
 	on:click|self={() => {
 		dispatch('closed');
 	}}
@@ -29,8 +29,9 @@
 			dispatch('closed');
 		}}
 	>
-		<SVG type="close" size="40px"/>
+		<SVG type="close" size="30px" />
 	</div>
+
 	<div class="img">
 		<div
 			class="btn nav prev"
@@ -40,6 +41,7 @@
 		>
 			<SVG type="prev" />
 		</div>
+
 		<div
 			class="btn nav next"
 			on:click={() => {
@@ -50,6 +52,7 @@
 		</div>
 		<img src="/image/{images[selected].image}.jpg" alt="img" />
 	</div>
+
 	<p>
 		{images[selected].caption}
 	</p>
@@ -57,13 +60,12 @@
 
 <style>
 	.blocker {
-		
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 30px;
-		
+
 		position: fixed;
 		left: 0;
 		top: 0;
@@ -71,35 +73,32 @@
 		width: 100%;
 		height: 100%;
 		z-index: 1;
-
-		backdrop-filter: blur(3px);
-		background-color: rgba(255, 255, 255, 0.796);
-		
 	}
-	
+
 	.btn {
 		--btnSize: 80px;
-		
+
 		display: flex;
 		justify-content: center;
 		align-items: center;
 
 		background-color: rgba(255, 255, 255, 0.2);
-		
+
 		width: var(--btnSize);
 		height: var(--btnSize);
 		border-radius: 50%;
-		
+
 		cursor: pointer;
-		fill: rgba(0, 0, 0, 0.213);
-		
+		fill: rgba(0, 0, 0, 0.4);
+		/* opacity: 0.2; */
+
 		transition: all var(--animTime1);
 		transition-timing-function: ease-in-out;
 	}
 	.btn:hover {
-		transform: scale(1.5);
-		/* background-color: var(--color2); */
+		transform: scale(1.3);
 		fill: var(--color3);
+		/* opacity: 1; */
 	}
 	.nav {
 		position: absolute;
@@ -111,19 +110,14 @@
 	.next {
 		right: 20px;
 	}
-	/* .close {
-		fill: var(--color3);
-	} */
 	.img {
 		position: relative;
-
-		/* width: 100%; */
+		max-height: calc(100% - 200px);
 	}
 	img {
 		width: 100%;
-		max-width: 800px;
-		max-height: 800px;
+		height: 100%;
 
-		object-fit: cover;
+		object-fit: contain;
 	}
 </style>
