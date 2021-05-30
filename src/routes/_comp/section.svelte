@@ -21,7 +21,7 @@
 	class:blend={bgi != null && blend}
 	style={bgi != null ? `background-image: url('/image/${bgi}.jpg')` : ''}
 >
-	<div class="block" style="min-height: {innerHeight}px;">
+	<div class="block" style="min-height: {outerHeight}px;">
 		<slot />
 	</div>
 </section>
