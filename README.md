@@ -1,4 +1,6 @@
 form messages
+pic captions
+all text
 
 fixed bgi
 
