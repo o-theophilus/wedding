@@ -8,8 +8,8 @@
 <Section bgi="bg1" blend={false} id="one">
 	<div class="subject">
 		<img class="pic" src="/image/pic7.jpg" alt="title" />
-		<img class="flower" src="image/flower1.png" alt="flower1" />
-		<img class="bird" src="image/bird.png" alt="bird" />
+		<img class="flower" src="image/f1.png" alt="flower1" />
+		<img class="bird" src="image/f2.png" alt="bird" />
 	</div>
 
 	<h1>{$title}</h1>

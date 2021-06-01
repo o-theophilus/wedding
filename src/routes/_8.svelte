@@ -13,7 +13,8 @@
 	<p>Account Name:</p>
 	<h2>Man Wife</h2>
 	<br />
-	<img src="/image/thanks.gif" alt="thanks" />
+	<img src="/image/f7
+	.gif" alt="thanks" />
 	<Scroller id="one" text="To Top" />
 </Section>
 

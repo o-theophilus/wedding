@@ -1,18 +1,17 @@
 <script>
-	import Section from './_comp/section.svelte';
 	import Picture from './_comp/picture.svelte';
 
 	let active = false;
 	let images = [
-		{ image: 'pic1', caption: 'This is the first' },
-		{ image: 'pic2', caption: 'This is not real' },
-		{ image: 'pic3', caption: 'This is not real' },
-		{ image: 'pic4', caption: 'This is not real' },
-		{ image: 'pic5', caption: 'This is the first' },
-		{ image: 'pic6', caption: 'This is not real' },
-		{ image: 'pic7', caption: 'This is not real' },
-		{ image: 'pic1', caption: 'This is not real' },
-		{ image: 'pic2', caption: 'This is the first' }
+		{ image: 'pic1', caption: 'Pre Wedding Photoshoot' },
+		{ image: 'pic2', caption: 'Pre Wedding Photoshoot' },
+		{ image: 'pic3', caption: 'Pre Wedding Photoshoot' },
+		{ image: 'pic4', caption: 'Pre Wedding Photoshoot' },
+		{ image: 'pic5', caption: 'Pre Wedding Photoshoot' },
+		{ image: 'pic6', caption: 'Pre Wedding Photoshoot' },
+		{ image: 'pic7', caption: 'Pre Wedding Photoshoot' },
+		{ image: 'pic8', caption: 'Pre Wedding Photoshoot' },
+		{ image: 'pic9', caption: 'Pre Wedding Photoshoot' }
 	];
 
 	let selected;
@@ -81,7 +80,7 @@
 		transition-timing-function: ease-in-out;
 	}
 	img:hover {
-		transform: scale(1.1);
+		transform: scale(1.05);
 		box-shadow: 0 0 10px var(--color3), 0 0 10px var(--color3);
 	}
 	@media screen and (min-width: 800px) {

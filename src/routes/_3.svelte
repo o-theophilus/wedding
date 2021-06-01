@@ -6,7 +6,7 @@
 </script>
 
 <Section bgi="bg2" id="three">
-	<img src="/image/date.gif" alt="date" />
+	<img src="/image/f4.gif" alt="date" />
 	<br />
 	<h1>June 12th, 2021</h1>
 	<h2>RCCG - Christ The Lord , 1-5 Admiralty Road, Lekki Phase 1</h2>

@@ -2,12 +2,11 @@
 	import { browser } from '$app/env';
 	import { setCookie, getCookie } from '$lib/cookie.js';
 
-	import Section from './_comp/section.svelte';
 	import SVG from './_comp/svg.svelte';
 	import { template, attend, meal } from './_comp/template.js';
 	import { days } from '$lib/store.js';
 
-	let formDaysExpire = 12;
+	let formDaysExpire = 10;
 
 	let form = {
 		name: '',

@@ -4,7 +4,7 @@
 
 <div class="details">
 	<div class="sec">
-		<img src="/image/pic4.jpg" alt="couple" />
+		<img src="/image/pic5.jpg" alt="couple" />
 		<svg><SVG size="70px" type="ceremony" /></svg>
 		<h1>The Ceremony</h1>
 		<p>
@@ -20,7 +20,7 @@
 	</div>
 
 	<div class="sec">
-		<img src="/image/pic5.jpg" alt="couple" />
+		<img src="/image/pic1.jpg" alt="couple" />
 		<svg><SVG size="70px" type="reception" /></svg>
 		<h1>The Reception</h1>
 		<p>
@@ -36,7 +36,7 @@
 	</div>
 
 	<div class="sec">
-		<img src="/image/pic6.jpg" alt="couple" />
+		<img src="/image/pic7.jpg" alt="couple" />
 		<svg><SVG size="70px" type="party" /></svg>
 		<h1>The After Party</h1>
 		<p>THURSDAY 17TH DECEMBER</p>
@@ -67,7 +67,8 @@
 
 		fill: var(--color2);
 	}
-	h1 {
+	h1,
+	strong {
 		color: var(--color2);
 	}
 	.sec {

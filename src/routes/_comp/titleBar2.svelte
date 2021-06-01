@@ -1,11 +1,11 @@
 <script>
 	import Hamburger from './mmb.svelte';
 
-	import { isMobile } from '$lib/store.js';
+	import { isMobile, miniBar } from '$lib/store.js';
 </script>
 
 {#if $isMobile}
-	<header>
+	<header class:mini={$miniBar}>
 		<div class="block">
 			<Hamburger />
 		</div>
@@ -26,10 +26,16 @@
 		align-items: center;
 		justify-content: flex-end;
 
-		height: var(--titleHeight);
+		height: var(--titleHeight2);
 
 		margin: auto;
 		padding: 10px;
+
+		transition: all var(--animTime1);
+		transition-timing-function: ease-in-out;
+	}
+	.mini .block {
+		height: var(--titleHeight);
 	}
 
 	@media screen and (min-width: 800px) {

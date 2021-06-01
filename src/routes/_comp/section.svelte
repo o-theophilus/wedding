@@ -25,7 +25,6 @@
 		background-blend-mode: multiply;
 		background-position: center;
 		background-size: cover;
-		/* background-attachment: fixed; */
 	}
 
 	.blend {
@@ -47,6 +46,11 @@
 	@media screen and (min-width: 800px) {
 		.block {
 			max-width: 800px;
+		}
+	}
+	@media screen and (min-width: 1000px) {
+		section {
+			background-attachment: fixed;
 		}
 	}
 	@media screen and (min-width: 1200px) {
