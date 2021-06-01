@@ -2,7 +2,7 @@
 	import Nav from './nav.svelte';
 	import SVG from './svg.svelte';
 
-	import { isMobile, title, miniBar } from '$lib/store.js';
+	import { isMobile, title, miniBar, date } from '$lib/store.js';
 
 	const scrollTo = (id) => {
 		let e = document.querySelector(`#${id}`);
@@ -20,7 +20,7 @@
 		<!-- <img src="/logo.png" alt="logo" on:click={() => scrollTo('one')} /> -->
 		<div>
 			<h2 on:click={() => scrollTo('one')}>{$title}</h2>
-			<p>June 12, 2021</p>
+			<p>{$date}</p>
 		</div>
 		{#if !$isMobile}
 			<Nav />

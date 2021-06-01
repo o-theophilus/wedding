@@ -88,13 +88,14 @@
 	<div class="block">
 		<h1>RSVP</h1>
 		<div class="rsvp">
-			<p>Yinka Oladayo: 08012345678</p>
+			<p><strong>Yinka Oladayo</strong>: 08012345678</p>
 		</div>
+		<br>
 		{#if $days >= formDaysExpire}
 			{#if !sent}
 				<form on:submit|preventDefault={validate}>
 					<div class="inputGroup">
-						<label for="name">Your Name</label>
+						<label for="name">Name</label>
 						<input placeholder="e.g. John Doe" type="text" id="name" bind:value={form.name} />
 
 						{#if err.name}
@@ -105,7 +106,7 @@
 					</div>
 
 					<div class="inputGroup">
-						<label for="phone">Your Phone Number</label>
+						<label for="phone">Phone Number</label>
 						<input placeholder="e.g. 08012345678" type="text" id="phone" bind:value={form.phone} />
 
 						{#if err.phone}
@@ -116,7 +117,7 @@
 					</div>
 
 					<div class="inputGroup">
-						<label for="email">Your E-mail (Optional)</label>
+						<label for="email">E-mail (Optional)</label>
 						<input placeholder="e.g. john@doe.com" type="text" id="email" bind:value={form.email} />
 
 						{#if err.email}
@@ -142,7 +143,7 @@
 
 					{#if form.attend != attend[1]}
 						<div class="inputGroup">
-							<p>Your Meal Preference</p>
+							<p>Meal Preference</p>
 							{#each meal as a, i}
 								<br />
 								<input type="radio" bind:group={form.meal} id="meal{i}" value={a} />

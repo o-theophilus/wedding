@@ -1,5 +1,6 @@
 <script>
 	import SVG from './svg.svelte';
+	import { date } from '$lib/store.js';
 </script>
 
 <div class="details">
@@ -8,9 +9,9 @@
 		<svg><SVG size="70px" type="ceremony" /></svg>
 		<h1>The Ceremony</h1>
 		<p>
-			THURSDAY 17TH DECEMBER
+			Saturday {$date}
 			<br />
-			12 NOON
+			12pm
 		</p>
 		<p>
 			<strong> RCCG - CHRIST THE LORD PARISH </strong>
@@ -24,14 +25,14 @@
 		<svg><SVG size="70px" type="reception" /></svg>
 		<h1>The Reception</h1>
 		<p>
-			THURSDAY 17TH DECEMBER
+			Saturday {$date}
 			<br />
-			2PM
+			2pm
 		</p>
 		<p>
-			<strong> VIRGIN ROSE RESORT </strong>
+			<strong> LANDMARK CENTRE </strong>
 			<br />
-			Plot 1231A Bishop Oluwole Street, Victoria Island
+			Plot 3 & 4 Water Corporation Road, Victoria Island Annex, Lagos, Nigeria.
 		</p>
 	</div>
 
@@ -39,11 +40,11 @@
 		<img src="/image/pic7.jpg" alt="couple" />
 		<svg><SVG size="70px" type="party" /></svg>
 		<h1>The After Party</h1>
-		<p>THURSDAY 17TH DECEMBER</p>
+		<p>Saturday {$date}</p>
 		<p>
-			<strong> VIRGIN ROSE RESORT </strong>
+			<strong> LANDMARK CENTRE </strong>
 			<br />
-			Plot 1231A Bishop Oluwole Street, Victoria Island
+			Plot 3 & 4 Water Corporation Road, Victoria Island Annex, Lagos, Nigeria.
 		</p>
 	</div>
 </div>
