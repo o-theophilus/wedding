@@ -1,5 +1,6 @@
 <script>
 	import { title } from '$lib/store.js';
+	import { browser } from '$app/env';
 
 	const scrollTo = (id) => {
 		let e = document.querySelector(`#${id}`);
@@ -9,16 +10,18 @@
 	};
 </script>
 
-<nav class="nav">
-	<div class="link opt" on:click={() => scrollTo('one')}>{$title}</div>
-	<div class="link" on:click={() => scrollTo('two')}>Our Story</div>
-	<div class="link" on:click={() => scrollTo('three')}>Date</div>
-	<div class="link" on:click={() => scrollTo('four')}>Details</div>
-	<div class="link" on:click={() => scrollTo('five')}>RSVP</div>
-	<div class="link" on:click={() => scrollTo('six')}>Engaged</div>
-	<div class="link" on:click={() => scrollTo('seven')}>Photo</div>
-	<div class="link" on:click={() => scrollTo('eight')}>Gift</div>
-</nav>
+{#if browser}
+	<nav class="nav">
+		<div class="link opt" on:click={() => scrollTo('one')}>{$title}</div>
+		<div class="link" on:click={() => scrollTo('two')}>Our Story</div>
+		<div class="link" on:click={() => scrollTo('three')}>Date</div>
+		<div class="link" on:click={() => scrollTo('four')}>Details</div>
+		<div class="link" on:click={() => scrollTo('five')}>RSVP</div>
+		<div class="link" on:click={() => scrollTo('six')}>Engaged</div>
+		<div class="link" on:click={() => scrollTo('seven')}>Photo</div>
+		<div class="link" on:click={() => scrollTo('eight')}>Gift</div>
+	</nav>
+{/if}
 
 <style>
 	nav {
