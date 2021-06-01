@@ -88,7 +88,7 @@
 	<div class="block">
 		<h1>RSVP</h1>
 		<div class="rsvp">
-			<p>John Doe: 08012345678</p>
+			<p>Yinka Oladayo: 08012345678</p>
 		</div>
 		{#if $days >= formDaysExpire}
 			{#if !sent}

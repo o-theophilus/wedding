@@ -7,11 +7,11 @@
 	<h1>Send Gifts</h1>
 	<br />
 	<p>Bank Name:</p>
-	<h2>Bank</h2>
+	<h2>GTBank</h2>
 	<p>Account Number:</p>
 	<h2>1234567890</h2>
 	<p>Account Name:</p>
-	<h2>Man Wife</h2>
+	<h2>Yinka Oladayo</h2>
 	<br />
 	<img src="/image/f7
 	.gif" alt="thanks" />
