@@ -1,6 +1,5 @@
 form messages
-pic captions
-all text
+invitation text
 
 fixed bgi
 
