@@ -14,9 +14,9 @@
 			12pm
 		</p>
 		<p>
-			<strong> RCCG - CHRIST THE LORD PARISH </strong>
+			<strong> CATHOLIC CHURCH OF DEVINE MERCY </strong>
 			<br />
-			1-5 Admiralty Road, Lekki Phase 1
+			Omega Estate, Admiralty Way, Lekki Phase 1, Lagos, Nigeria.
 		</p>
 	</div>
 
