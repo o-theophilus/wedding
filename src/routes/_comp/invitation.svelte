@@ -14,7 +14,7 @@
 			12pm
 		</p>
 		<p>
-			<strong> CATHOLIC CHURCH OF DEVINE MERCY </strong>
+			<strong> CATHOLIC CHURCH OF DEVINE MERCY. </strong>
 			<br />
 			Omega Estate, Admiralty Way, Lekki Phase 1, Lagos, Nigeria.
 		</p>
