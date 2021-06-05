@@ -10,7 +10,9 @@
 	<img src="/image/f4.gif" alt="date" />
 	<br />
 	<h1>{$date}</h1>
-	<h2>RCCG - Christ The Lord , 1-5 Admiralty Road, Lekki Phase 1</h2>
+	<h2>CATHOLIC CHURCH OF DEVINE MERCY
+			<br />
+			Omega Estate, Admiralty Way, Lekki Phase 1, Lagos, Nigeria.</h2>
 	<br />
 	<br />
 	<CountDown {time} />
