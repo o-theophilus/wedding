@@ -1,7 +1,7 @@
 <script>
 	import Section from './_comp/section.svelte';
 	import CountDown from './_comp/countDown.svelte';
-	import {date} from '$lib/store';
+	import { date } from '$lib/store';
 
 	let time = new Date(`${$date} 12:00:00`).getTime();
 </script>
@@ -10,10 +10,10 @@
 	<img src="/image/f4.gif" alt="date" />
 	<br />
 	<h1>{$date}</h1>
-	<h2>CATHOLIC CHURCH OF DEVINE MERCY
-			<br />
-			Omega Estate, Admiralty Way, Lekki Phase 1, Lagos, Nigeria.</h2>
+	<h2>CATHOLIC CHURCH OF DEVINE MERCY.</h2>
 	<br />
+	<br />
+	<p>Omega Estate, Admiralty Way, Lekki Phase 1, Lagos, Nigeria.</p>
 	<br />
 	<CountDown {time} />
 </Section>
