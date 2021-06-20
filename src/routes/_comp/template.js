@@ -37,4 +37,4 @@ Always and Forever.
 ];
 
 export const attend = ['Yes, I will be there', "Sorry, I can't come"];
-export const meal = ['I eat anything', 'Intercontinental', 'African', 'Vegetarian'];
+export const meal = ['Intercontinental', 'African', 'Vegetarian', 'I eat anything'];

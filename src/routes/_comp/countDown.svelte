@@ -1,7 +1,5 @@
 <script>
 	import { days } from '$lib/store.js';
-
-	// let days;
 	let hours;
 	let minutes;
 	let seconds;

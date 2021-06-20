@@ -13,3 +13,4 @@ Powered by SVELTE
 
     * inviation code
     * animate image view change
+    * admin

@@ -8,62 +8,48 @@
 
 	let formDaysExpire = 10;
 
-	let form = {
-		name: '',
-		phone: '',
-		email: '',
-		attend: '',
-		meal: '',
-		msg: ''
-	};
-
-	let err = {
-		name: '',
-		phone: '',
-		email: '',
-		attend: '',
-		meal: '',
-		msg: '',
-		form: ''
-	};
-
+	let form = {};
+	let err = {};
 	let sent = false;
-	let sending = false;
 
 	if (browser) {
 		sent = getCookie('rsvp');
-		console.log(sent);
 	}
 
 	const validate = () => {
-		err.name = form.name === '' ? 'Please enter your name' : '';
-		if (form.email != '') {
-			err.email = /\S+@\S+\.\S+/.test(form.email) ? '' : 'Please enter a valid email address';
+		err = {};
+		if (!form.name) {
+			err.name = 'Please enter your name';
 		}
-		err.phone = form.phone === '' ? 'Please enter your phone number' : '';
-		err.attend = form.attend === '' ? 'Please select an option' : '';
-		if (form.attend == attend[0]) {
-			err.meal = form.meal === '' ? 'Please select an option' : '';
-		} else {
-			form.meal = '';
-		}
-		// err.msg = form.msg === '' ? 'Please select an option' : '';
 
-		if (
-			err.name === '' &&
-			err.phone === '' &&
-			err.email === '' &&
-			err.attend === '' &&
-			err.meal === '' &&
-			err.msg === '' &&
-			err.form === ''
-		) {
+		if (!form.email) {
+			err.email = 'Please enter an email address';
+		} else if (!/\S+@\S+\.\S+/.test(form.email)) {
+			err.email = 'Please enter a valid email address';
+		}
+
+		if (!form.phone) {
+			err.phone = 'Please enter your phone number';
+		}
+
+		if (!form.attend) {
+			err.attend = 'Please select an option';
+		}
+
+		if (form.attend == attend[0] && !form.meal) {
+			err.meal = 'Please select an option';
+		}
+
+		// if (form.msg === '') {
+		// 	err.msg = 'Please enter a message';
+		// }
+
+		if (Object.keys(err).length === 0) {
 			submit();
 		}
 	};
 
 	const submit = async () => {
-		sending = true;
 		const resp = await fetch('https://formspree.io/f/xknkjbpb', {
 			method: 'post',
 			headers: { 'Content-Type': 'application/json' },
@@ -72,7 +58,6 @@
 
 		const data = await resp.json();
 
-		sending = false;
 		if (resp.ok) {
 			sent = true;
 			setCookie('rsvp', 'true', 365);
@@ -81,7 +66,7 @@
 		}
 	};
 
-	let store = '';
+	let store;
 </script>
 
 <section id="five" noCenterText>
@@ -90,7 +75,7 @@
 		<div class="rsvp">
 			<p><strong>Yinka Oladayo</strong>: 08012345678</p>
 		</div>
-		<br>
+		<br />
 		{#if $days >= formDaysExpire}
 			{#if !sent}
 				<form on:submit|preventDefault={validate}>
@@ -129,10 +114,10 @@
 
 					<div class="inputGroup">
 						<p>Will you attend?</p>
-						{#each attend as a, i}
+						{#each attend as value, i}
 							<br />
-							<input type="radio" bind:group={form.attend} id="attend{i}" value={a} />
-							<label for="attend{i}">{a}</label>
+							<input type="radio" bind:group={form.attend} id="attend{i}" {value} />
+							<label for="attend{i}">{value}</label>
 						{/each}
 						{#if err.attend}
 							<p class="err">
@@ -144,10 +129,10 @@
 					{#if form.attend != attend[1]}
 						<div class="inputGroup">
 							<p>Meal Preference</p>
-							{#each meal as a, i}
+							{#each meal as value, i}
 								<br />
-								<input type="radio" bind:group={form.meal} id="meal{i}" value={a} />
-								<label for="meal{i}">{a}</label>
+								<input type="radio" bind:group={form.meal} id="meal{i}" {value} />
+								<label for="meal{i}">{value}</label>
 							{/each}
 							{#if err.meal}
 								<p class="err">
