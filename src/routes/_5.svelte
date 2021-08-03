@@ -196,9 +196,6 @@
 	h1 {
 		color: var(--color2);
 	}
-	* {
-		outline: none;
-	}
 
 	form {
 		max-width: 400px;
