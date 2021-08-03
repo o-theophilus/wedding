@@ -1,5 +1,5 @@
 <script>
-	import Picture from './_comp/picture.svelte';
+	import Picture from './picture.svelte';
 
 	let active = false;
 	let images = [
@@ -73,7 +73,7 @@
 
 		object-fit: cover;
 
-		box-shadow: 0 0 3px var(--color0), 0 0 3px var(--color0);
+		box-shadow: 0 0 0 transparent;
 		cursor: pointer;
 
 		transition: all var(--animTime1);
@@ -81,7 +81,7 @@
 	}
 	img:hover {
 		transform: scale(1.05);
-		box-shadow: 0 0 10px var(--color3), 0 0 10px var(--color3);
+		box-shadow: 0 0 10px var(--color3);
 	}
 	@media screen and (min-width: 800px) {
 		img {

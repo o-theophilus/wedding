@@ -11,6 +11,6 @@ Powered by SVELTE
 
 1. Add Feature
 
-    * inviation code
+    * invitation code
     * animate image view change
     * admin

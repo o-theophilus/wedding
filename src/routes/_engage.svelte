@@ -1,5 +1,5 @@
 <script>
-	import Section from './_comp/section.svelte';
+	import Section from '$lib/section.svelte';
 </script>
 
 <Section bgi="bg3" id="six">

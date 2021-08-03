@@ -1,6 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import SVG from './svg.svelte';
+	import SVG from '$lib/svg.svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -39,7 +39,7 @@
 				chabgePic(-1);
 			}}
 		>
-			<SVG type="prev" />
+			<SVG type="prev" size="30px"  />
 		</div>
 
 		<div
@@ -48,7 +48,7 @@
 				chabgePic(+1);
 			}}
 		>
-			<SVG type="next" />
+			<SVG type="next" size="30px"  />
 		</div>
 		<img src="/image/{images[selected].image}.jpg" alt="img" />
 	</div>
@@ -76,7 +76,7 @@
 	}
 
 	.btn {
-		--btnSize: 80px;
+		--btnSize: 60px;
 
 		display: flex;
 		justify-content: center;

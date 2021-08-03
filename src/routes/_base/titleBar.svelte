@@ -1,6 +1,6 @@
 <script>
 	import Nav from './nav.svelte';
-	import SVG from './svg.svelte';
+	import SVG from '$lib/svg.svelte';
 
 	import { isMobile, title, miniBar, date } from '$lib/store.js';
 
@@ -17,7 +17,6 @@
 		<div class="logo" on:click={() => scrollTo('one')}>
 			<SVG type="logo" size="100%" />
 		</div>
-		<!-- <img src="/logo.png" alt="logo" on:click={() => scrollTo('one')} /> -->
 		<div>
 			<h2 on:click={() => scrollTo('one')}>{$title}</h2>
 			<p>{$date}</p>

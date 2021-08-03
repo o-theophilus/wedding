@@ -1,6 +1,6 @@
 <script>
-	import Section from './_comp/section.svelte';
-	import Scroller from './_comp/scroller.svelte';
+	import Section from '$lib/section.svelte';
+	import Scroller from '$lib/scroller.svelte';
 </script>
 
 <Section bgi="bg4" id="eight">

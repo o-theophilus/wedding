@@ -2,8 +2,8 @@
 	import { browser } from '$app/env';
 	import { setCookie, getCookie } from '$lib/cookie.js';
 
-	import SVG from './_comp/svg.svelte';
-	import { template, attend, meal } from './_comp/template.js';
+	import SVG from '$lib/svg.svelte';
+	import { template, attend, meal } from './template.js';
 	import { days } from '$lib/store.js';
 
 	let formDaysExpire = 10;

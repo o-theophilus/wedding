@@ -28,7 +28,8 @@
 		justify-content: center;
 		align-items: center;
 
-		position: relative;
+		position: absolute;
+		right: 20px;
 
 		width: var(--buttonSize);
 		height: var(--buttonSize);

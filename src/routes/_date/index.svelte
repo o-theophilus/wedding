@@ -1,6 +1,6 @@
 <script>
-	import Section from './_comp/section.svelte';
-	import CountDown from './_comp/countDown.svelte';
+	import Section from '$lib/section.svelte';
+	import CountDown from './countDown.svelte';
 	import { date } from '$lib/store';
 
 	let time = new Date(`${$date} 12:00:00`).getTime();

@@ -1,38 +1,41 @@
 <script>
-	import TitleBar from './_comp/titleBar.svelte';
-	import TitleBar2 from './_comp/titleBar2.svelte';
-	import Title from './_1.svelte';
-	import Story from './_2.svelte';
-	import Date from './_3.svelte';
-	import Details from './_4.svelte';
-	import Divider from './_comp/divider.svelte';
-	import Form from './_5.svelte';
-	import Gallery from './_7.svelte';
-	import Story2 from './_6.svelte';
-	import Gift from './_8.svelte';
-	import Footer from './_comp/footer.svelte';
-	import MobileMenu from './_comp/mobileMenu.svelte';
-	import Music from './_comp/music.svelte';
-
 	import { title } from '$lib/store.js';
+
+	import Home from './_home.svelte';
+	import Story from './_story.svelte';
+	import Date from './_date/index.svelte';
+	import Details from './_details/index.svelte';
+	import Divider from '../lib/divider.svelte';
+	import Form from './_rsvp/index.svelte';
+	import Photo from './_photo/index.svelte';
+	import Story2 from './_engage.svelte';
+	import Gift from './_gift.svelte';
+	import Footer from './_footer.svelte';
+
+	import Music from '$lib/music.svelte';
+
+	import TitleBar from './_base/titleBar.svelte';
+	import TitleBar2 from './_base/titleBar2.svelte';
+	import MobileMenu from './_base/mobileMenu.svelte';
 </script>
 
 <svelte:head>
 	<title>{$title}</title>
 </svelte:head>
 
-<Title />
+<Home />
 <Story />
 <Date />
 <Details />
 <Divider />
 <Form />
 <Story2 />
-<Gallery />
+<Photo />
 <Gift />
 <Footer />
+
+<Music />
 
 <TitleBar />
 <MobileMenu />
 <TitleBar2 />
-<Music />
